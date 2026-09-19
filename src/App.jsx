@@ -1,12 +1,13 @@
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import AppLayout from "./components/AppLayout";
 import InstallPrompt from "./components/InstallPrompt";
-import Onboarding from "./pages/Onboarding";
-import Home from "./pages/Home";
-import Planner from "./pages/Planner";
-import Health from "./pages/Health";
-import Profile from "./pages/Profile";
+import { ROUTES } from "./config/routes";
+import HealthPage from "./features/health/HealthPage";
+import HomePage from "./features/home/HomePage";
+import OnboardingPage from "./features/onboarding/OnboardingPage";
+import PlannerPage from "./features/planner/PlannerPage";
+import ProfilePage from "./features/profile/ProfilePage";
 
 export default function App() {
   return (
@@ -14,14 +15,16 @@ export default function App() {
       <InstallPrompt />
 
       <Routes>
-        <Route path="/" element={<Onboarding />} />
+        <Route path={ROUTES.onboarding} element={<OnboardingPage />} />
 
         <Route element={<AppLayout />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/planner" element={<Planner />} />
-          <Route path="/health" element={<Health />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path={ROUTES.home} element={<HomePage />} />
+          <Route path={ROUTES.planner} element={<PlannerPage />} />
+          <Route path={ROUTES.health} element={<HealthPage />} />
+          <Route path={ROUTES.profile} element={<ProfilePage />} />
         </Route>
+
+        <Route path="*" element={<Navigate to={ROUTES.home} replace />} />
       </Routes>
     </>
   );
