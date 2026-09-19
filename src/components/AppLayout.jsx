@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { MotionConfig } from "motion/react";
 
@@ -7,20 +7,25 @@ import PageTransition from "./PageTransition";
 
 export default function AppLayout() {
   const { pathname } = useLocation();
+  const scrollRef = useRef(null);
 
   // Each tab opens at the top instead of keeping the previous tab's scroll
   useLayoutEffect(() => {
-    window.scrollTo(0, 0);
+    scrollRef.current?.scrollTo(0, 0);
   }, [pathname]);
 
   return (
     <MotionConfig reducedMotion="user">
-      {/* Keyed by route so only the page content re-animates; BottomNav stays mounted */}
-      <PageTransition key={pathname}>
-        <Outlet />
-      </PageTransition>
+      {/* The shell is app-sized; only .app-scroll scrolls, and BottomNav never remounts */}
+      <div className="app-shell">
+        <div className="app-scroll" ref={scrollRef}>
+          <PageTransition key={pathname}>
+            <Outlet />
+          </PageTransition>
+        </div>
 
-      <BottomNav />
+        <BottomNav />
+      </div>
     </MotionConfig>
   );
 }

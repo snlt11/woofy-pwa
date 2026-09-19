@@ -7,27 +7,24 @@ export default function Onboarding() {
   return (
     <main className="onboarding">
       {/* Decorative paw prints */}
-      <img src="/assets/paw.png" alt="" className="paw-decoration paw-1" />
-      <img src="/assets/paw.png" alt="" className="paw-decoration paw-2" />
-      <img src="/assets/paw.png" alt="" className="paw-decoration paw-3" />
-      <img src="/assets/paw.png" alt="" className="paw-decoration paw-4" />
-
-      {/* Logo */}
-      <div className="logo-wrapper">
-        <img src="/assets/woofy-logo.png" alt="WOOFY" className="woofy-logo" />
+      <div className="onboarding-paws" aria-hidden="true">
+        <img src="/assets/paw.png" alt="" className="paw-decoration paw-1" />
+        <img src="/assets/paw.png" alt="" className="paw-decoration paw-2" />
+        <img src="/assets/paw.png" alt="" className="paw-decoration paw-3" />
+        <img src="/assets/paw.png" alt="" className="paw-decoration paw-4" />
       </div>
 
-      {/* Buddy */}
-      <div className="buddy-wrapper">
-        <img
-          src="/assets/buddy-master.png"
-          alt="Buddy"
-          className="buddy-image"
-        />
+      <img
+        src="/assets/woofy-logo.png"
+        alt="WOOFY"
+        className="onboarding-logo"
+      />
+
+      <div className="onboarding-mascot">
+        <img src="/assets/buddy-master.png" alt="Buddy" />
       </div>
 
-      {/* CTA */}
-      <button className="get-woofy-button" onClick={() => navigate("/home")}>
+      <button className="onboarding-button" onClick={() => navigate("/home")}>
         <span>Get WOOFY</span>
         <PawPrint size={24} />
       </button>
