@@ -85,6 +85,9 @@ function migrateLegacySnapshot() {
 
   return normalizeSnapshot({
     ...seed,
+    onboarding: {
+      completed: true,
+    },
     home: {
       ...seed.home,
       careTasks: Array.isArray(legacyCareTasks)
