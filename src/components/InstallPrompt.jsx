@@ -147,7 +147,7 @@ export default function InstallPrompt() {
             <div className="install-step">
               <span>3</span>
               <Download size={22} />
-              <p>Turn on Open as Web App, then tap Add</p>
+              <p>Tap Add (on older iOS, turn on Open as Web App first)</p>
             </div>
 
             <button className="install-primary" onClick={dismiss}>
