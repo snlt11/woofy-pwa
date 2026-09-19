@@ -9,7 +9,11 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
 
-      includeAssets: ["pwa/apple-touch-icon.png"],
+      includeAssets: [
+        "pwa/woofy-apple-touch-icon-v2.png",
+        "apple-touch-icon.png",
+        "apple-touch-icon-precomposed.png",
+      ],
 
       // Precache images too, so Buddy, the logo and paws load offline
       workbox: {
@@ -34,17 +38,19 @@ export default defineConfig({
 
         icons: [
           {
-            src: "/pwa/icon-192.png",
+            src: "/pwa/woofy-icon-192.png",
             sizes: "192x192",
             type: "image/png",
+            purpose: "any",
           },
           {
-            src: "/pwa/icon-512.png",
+            src: "/pwa/woofy-icon-512.png",
             sizes: "512x512",
             type: "image/png",
+            purpose: "any",
           },
           {
-            src: "/pwa/icon-maskable-512.png",
+            src: "/pwa/woofy-icon-maskable-512.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "maskable",
