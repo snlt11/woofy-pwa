@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Share, SquarePlus, X, Download } from "lucide-react";
 
+import { ASSETS } from "../config/assets";
+
 const DISMISSED_KEY = "woofy-install-dismissed";
 const SNOOZE_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -111,7 +113,7 @@ export default function InstallPrompt() {
           <X size={20} />
         </button>
 
-        <img src="/assets/buddy-master.png" alt="" className="install-buddy" />
+        <img src={ASSETS.buddy} alt="" className="install-buddy" />
 
         {!showIOSInstructions ? (
           <>
@@ -147,7 +149,7 @@ export default function InstallPrompt() {
             <div className="install-step">
               <span>3</span>
               <Download size={22} />
-              <p>Turn on Open as Web App, then tap Add</p>
+              <p>Tap Add (on older iOS, turn on Open as Web App first)</p>
             </div>
 
             <button className="install-primary" onClick={dismiss}>
