@@ -9,7 +9,7 @@ export default function AppLayout() {
   const scrollRef = useRef(null);
 
   useLayoutEffect(() => {
-    scrollRef.current?.scrollTo({ top: 0, behavior: "instant" });
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
   }, [pathname]);
 
   return (
