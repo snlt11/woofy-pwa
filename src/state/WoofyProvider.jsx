@@ -5,7 +5,7 @@ import {
   useState,
 } from "react";
 
-import { woofyRepository } from "../data/local-woofy-repository";
+import { woofyRepository } from "../data";
 
 export const WoofyContext = createContext(null);
 
