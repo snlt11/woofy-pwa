@@ -1,33 +1,29 @@
 import { NavLink } from "react-router-dom";
-import { Home, CalendarDays, Heart, User } from "lucide-react";
+import { House, CalendarDays, Heart, UserRound } from "lucide-react";
 
-const items = [
-  { to: "/home", label: "Home", icon: Home },
+const tabs = [
+  { to: "/home", label: "Home", icon: House },
   { to: "/planner", label: "Planner", icon: CalendarDays },
   { to: "/health", label: "Health", icon: Heart },
-  { to: "/profile", label: "Profile", icon: User },
+  { to: "/profile", label: "Profile", icon: UserRound },
 ];
 
 export default function BottomNav() {
   return (
-    <nav className="bottom-nav">
-      {items.map((item) => {
-        const Icon = item.icon;
+    <nav className="woofy-tabbar">
+      {tabs.map(({ to, label, icon: Icon }) => (
+        <NavLink
+          key={to}
+          to={to}
+          className={({ isActive }) => `woofy-tab ${isActive ? "is-active" : ""}`}
+        >
+          <span className="woofy-tab-icon">
+            <Icon size={24} strokeWidth={2} />
+          </span>
 
-        return (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
-          >
-            <span className="nav-icon">
-              <Icon size={23} />
-            </span>
-
-            <span>{item.label}</span>
-          </NavLink>
-        );
-      })}
+          <span className="woofy-tab-label">{label}</span>
+        </NavLink>
+      ))}
     </nav>
   );
 }
