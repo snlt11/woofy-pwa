@@ -1,0 +1,67 @@
+.woofy-icon,
+.woofy-state-icon,
+.woofy-paw-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.care-icon {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.care-icon .woofy-icon {
+  width: 58px;
+  height: 58px;
+}
+
+.add-button {
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+.add-button .woofy-state-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.care-check,
+.care-check.done {
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+}
+
+.care-check .woofy-state-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.wellness-icon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 14px;
+}
+
+.wellness-icon .woofy-icon {
+  width: 58px;
+  height: 58px;
+}
+
+@media (max-width: 370px) {
+  .care-icon,
+  .care-icon .woofy-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .wellness-icon,
+  .wellness-icon .woofy-icon {
+    width: 52px;
+    height: 52px;
+  }
+}

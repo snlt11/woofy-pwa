@@ -1,20 +1,23 @@
 import {
   Bell,
-  CalendarDays,
-  Check,
-  Circle,
-  Footprints,
   Laugh,
   Leaf,
   Moon,
-  Plus,
-  Scale,
   Smile,
-  Utensils,
 } from "lucide-react";
 
+import {
+  AddIcon,
+  CompleteIcon,
+  IncompleteIcon,
+  MealIcon,
+  VetCalendarIcon,
+  WalkIcon,
+  WeightIcon,
+} from "../../components/icons/WoofyIcons";
 import { ASSETS } from "../../config/assets";
 import { useWoofy } from "../../state/useWoofy";
+import "../../styles/woofy-icons.css";
 
 const moods = [
   { id: "happy", label: "Happy", icon: Smile },
@@ -91,7 +94,7 @@ export default function HomePage() {
           <h2>Today's care</h2>
 
           <button className="add-button" type="button" aria-label="Add care task">
-            <Plus size={28} />
+            <AddIcon />
           </button>
         </div>
 
@@ -111,12 +114,12 @@ export default function HomePage() {
 
         <div className="wellness-grid">
           <WellnessCard
-            icon={<Scale size={25} />}
+            icon={<WeightIcon />}
             value={`${pet.weightKg} KG`}
             label="Weight"
           />
           <WellnessCard
-            icon={<CalendarDays size={25} />}
+            icon={<VetCalendarIcon />}
             value={health.nextVetVisit.dateLabel}
             label="Next vet visit"
           />
@@ -127,12 +130,12 @@ export default function HomePage() {
 }
 
 function CareItem({ task, onToggle }) {
-  const Icon = task.type === "walk" ? Footprints : Utensils;
+  const Icon = task.type === "walk" ? WalkIcon : MealIcon;
 
   return (
     <article className="care-item">
       <div className="care-icon">
-        <Icon size={24} />
+        <Icon />
       </div>
 
       <div className="care-copy">
@@ -147,7 +150,7 @@ function CareItem({ task, onToggle }) {
         aria-pressed={task.completed}
         aria-label={`Mark ${task.title} ${task.completed ? "not complete" : "complete"}`}
       >
-        {task.completed ? <Check size={22} /> : <Circle size={24} />}
+        {task.completed ? <CompleteIcon /> : <IncompleteIcon />}
       </button>
     </article>
   );
