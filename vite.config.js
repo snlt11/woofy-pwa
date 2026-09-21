@@ -18,6 +18,7 @@ export default defineConfig({
       // Precache images too, so Buddy, the logo and paws load offline
       workbox: {
         globPatterns: ["**/*.{js,css,html,png,webmanifest}"],
+        cleanupOutdatedCaches: true,
       },
 
       manifest: {
