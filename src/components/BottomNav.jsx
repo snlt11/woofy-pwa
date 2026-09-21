@@ -5,7 +5,7 @@ import {
   HomeNavIcon,
   PlannerNavIcon,
   ProfileNavIcon,
-} from "./icons/WoofyIcons";
+} from "./icons/NavIcons";
 import { ROUTES } from "../config/routes";
 
 const tabs = [
