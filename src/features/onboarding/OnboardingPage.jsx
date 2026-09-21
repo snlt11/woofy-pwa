@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { ArrowLeft, PawPrint } from "lucide-react";
+import { ArrowLeft, CalendarDays, PawPrint } from "lucide-react";
 
 import { ASSETS } from "../../config/assets";
 import {
+  formatBirthdayShort,
   formValuesToPetPatch,
   petToFormValues,
 } from "../../lib/pet-profile";
@@ -122,16 +123,27 @@ export default function OnboardingPage() {
                 />
               </label>
 
-              <label className="pet-field">
+              <label className="pet-field pet-date-field">
                 <span>Birthday</span>
-                <input
-                  type="date"
-                  name="birthdayISO"
-                  value={values.birthdayISO}
-                  onChange={updateField}
-                  max={new Date().toISOString().slice(0, 10)}
-                  required
-                />
+
+                <div className="pet-date-control">
+                  <span className="pet-date-value">
+                    {formatBirthdayShort(values.birthdayISO)}
+                  </span>
+
+                  <CalendarDays size={18} aria-hidden="true" />
+
+                  <input
+                    className="pet-date-native"
+                    type="date"
+                    name="birthdayISO"
+                    value={values.birthdayISO}
+                    onChange={updateField}
+                    max={new Date().toISOString().slice(0, 10)}
+                    aria-label="Birthday"
+                    required
+                  />
+                </div>
               </label>
 
               <label className="pet-field">
