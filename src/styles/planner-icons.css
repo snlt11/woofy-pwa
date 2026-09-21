@@ -78,3 +78,59 @@
     height: 42px;
   }
 }
+
+
+/* Planner activity detail navigation */
+
+.planner-page .timeline-card-with-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 8px;
+}
+
+.planner-page .timeline-open {
+  min-width: 0;
+  min-height: 58px;
+
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  text-align: left;
+}
+
+.planner-page .timeline-open .timeline-copy {
+  min-width: 0;
+}
+
+.planner-page .timeline-detail-chevron {
+  color: #aaa29f;
+}
+
+.planner-page .timeline-open:active {
+  opacity: .72;
+}
+
+@media (max-width: 370px) {
+  .planner-page .timeline-open {
+    grid-template-columns: 44px minmax(0, 1fr) 16px;
+    gap: 9px;
+  }
+
+  .planner-page .timeline-card-with-details {
+    grid-template-columns: minmax(0, 1fr) 42px;
+  }
+
+  .planner-page .timeline-detail-chevron {
+    width: 16px;
+    height: 16px;
+  }
+}

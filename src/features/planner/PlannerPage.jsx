@@ -1,4 +1,5 @@
-import { Plus } from "lucide-react";
+import { ChevronRight, Plus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 import {
   CompleteIcon,
@@ -12,6 +13,7 @@ import {
   WalkIcon,
 } from "../../components/icons/WoofyIcons";
 import { ASSETS } from "../../config/assets";
+import { ROUTES } from "../../config/routes";
 import {
   addDays,
   formatMonthYear,
@@ -32,6 +34,8 @@ const activityIcons = {
 };
 
 export default function PlannerPage() {
+  const navigate = useNavigate();
+
   const {
     state: { pet, planner },
     actions,
@@ -140,6 +144,14 @@ export default function PlannerPage() {
               activity={activity}
               icon={<Icon />}
               last={index === planner.activities.length - 1}
+              onOpen={() =>
+                navigate(
+                  ROUTES.plannerActivityDetails.replace(
+                    ":activityId",
+                    String(activity.id)
+                  )
+                )
+              }
               onToggle={() => actions.togglePlannerActivity(activity.id)}
             />
           );
@@ -168,7 +180,13 @@ function Day({ day, date, active = false, onSelect }) {
   );
 }
 
-function TimelineItem({ activity, icon, last = false, onToggle }) {
+function TimelineItem({
+  activity,
+  icon,
+  last = false,
+  onOpen,
+  onToggle,
+}) {
   return (
     <article className="timeline-row">
       <div className="timeline-time">
@@ -180,13 +198,26 @@ function TimelineItem({ activity, icon, last = false, onToggle }) {
         <span className={activity.completed ? "marker-done" : ""} />
       </div>
 
-      <div className="timeline-card">
-        <div className="timeline-icon">{icon}</div>
+      <div className="timeline-card timeline-card-with-details">
+        <button
+          className="timeline-open"
+          type="button"
+          onClick={onOpen}
+          aria-label={`View details for ${activity.title}`}
+        >
+          <div className="timeline-icon">{icon}</div>
 
-        <div className="timeline-copy">
-          <strong>{activity.title}</strong>
-          <span>{activity.detail}</span>
-        </div>
+          <div className="timeline-copy">
+            <strong>{activity.title}</strong>
+            <span>{activity.detail}</span>
+          </div>
+
+          <ChevronRight
+            className="timeline-detail-chevron"
+            size={18}
+            aria-hidden="true"
+          />
+        </button>
 
         <button
           className={`care-check ${activity.completed ? "done" : ""}`}
