@@ -79,7 +79,7 @@ export default function OnboardingPage() {
 
   if (step === "about") {
     return (
-      <main className="onboarding-profile onboarding-profile-step">
+      <main key="about-step" className="onboarding-profile onboarding-profile-step">
         <OnboardingSetupHeader
           stepLabel="Step 1 of 2"
           title="Tell us about your pet"
@@ -193,9 +193,9 @@ export default function OnboardingPage() {
     );
   }
 
-  if (step === "care" || onboarding.completed) {
+  if (step === "care") {
     return (
-      <main className="onboarding-profile onboarding-profile-step">
+      <main key="care-step" className="onboarding-profile onboarding-profile-step">
         <OnboardingSetupHeader
           stepLabel="Step 2 of 2"
           title="Care details"
