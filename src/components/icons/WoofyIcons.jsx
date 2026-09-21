@@ -379,3 +379,134 @@ export function ActivityHeartIcon({ className = "", title = "Daily activity" }) 
     </svg>
   );
 }
+
+
+export function BirthdayIcon({ className = "", title = "Birthday" }) {
+  return (
+    <svg className={`woofy-icon ${className}`} viewBox="0 0 64 64" role="img" aria-label={title}>
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g fill="none" stroke="#2E8FE5" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 34h28v14H18z" />
+        <path d="M18 34c2.5-4 5.8-5.8 10-5.2 2.2.3 3.5 1.5 4 3 1-1.7 2.4-2.7 4.6-2.8 3.9-.2 7.3 1.5 9.4 5" />
+        <path d="M23 34v14M41 34v14" />
+        <path d="M24 23v6M32 20v9M40 23v6" />
+      </g>
+      <g fill="#2E8FE5">
+        <path d="M22.6 20.5c0-1.8 1.4-3.3 2.9-4.8 1.5 1.5 2.9 3 2.9 4.8a2.9 2.9 0 1 1-5.8 0Z" />
+        <path d="M29.1 17.7c0-1.8 1.4-3.3 2.9-4.8 1.5 1.5 2.9 3 2.9 4.8a2.9 2.9 0 1 1-5.8 0Z" />
+        <path d="M35.6 20.5c0-1.8 1.4-3.3 2.9-4.8 1.5 1.5 2.9 3 2.9 4.8a2.9 2.9 0 1 1-5.8 0Z" />
+      </g>
+    </svg>
+  );
+}
+
+export function GenderIcon({ className = "", title = "Gender" }) {
+  return (
+    <svg className={`woofy-icon ${className}`} viewBox="0 0 64 64" role="img" aria-label={title}>
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g fill="none" stroke="#2E8FE5" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="25" cy="31" r="9" />
+        <path d="M19 38 14 43M14 38v5h5" />
+        <circle cx="39" cy="27" r="9" />
+        <path d="m45 21 7-7M47 14h5v5" />
+      </g>
+    </svg>
+  );
+}
+
+export function ActivityLevelIcon({ className = "", title = "Activity level" }) {
+  return (
+    <svg className={`woofy-icon ${className}`} viewBox="0 0 64 64" role="img" aria-label={title}>
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g fill="none" stroke="#2E8FE5" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M32 49S14.5 39 14.5 26.5A9.5 9.5 0 0 1 32 21a9.5 9.5 0 0 1 17.5 5.5C49.5 39 32 49 32 49Z" />
+        <path d="M21 32h6l3-6 4 12 3-6h6" />
+      </g>
+    </svg>
+  );
+}
+
+export function MicrochipIcon({ className = "", title = "Microchip" }) {
+  return (
+    <svg className={`woofy-icon ${className}`} viewBox="0 0 64 64" role="img" aria-label={title}>
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g fill="none" stroke="#2E8FE5" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="20" y="20" width="24" height="24" rx="5" />
+        <path d="M26 15v5M32 15v5M38 15v5M26 44v5M32 44v5M38 44v5M15 26h5M15 32h5M15 38h5M44 26h5M44 32h5M44 38h5" />
+      </g>
+      <g fill="#2E8FE5">
+        <circle cx="28" cy="31" r="1.6" />
+        <circle cx="32" cy="29.6" r="1.6" />
+        <circle cx="36" cy="31" r="1.6" />
+        <path d="M27.8 35.2c0-2 1.8-3.6 4.2-3.6s4.2 1.6 4.2 3.6c0 1.6-1.4 2.7-4.2 2.7s-4.2-1.1-4.2-2.7Z" />
+      </g>
+    </svg>
+  );
+}
+
+export function VetIcon({ className = "", title = "Primary vet" }) {
+  return (
+    <svg className={`woofy-icon ${className}`} viewBox="0 0 64 64" role="img" aria-label={title}>
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g fill="none" stroke="#2E8FE5" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 16v13a10 10 0 0 0 20 0V16" />
+        <path d="M18 16h8M38 16h8" />
+        <path d="M32 39v5a7 7 0 0 0 14 0v-3" />
+        <circle cx="46" cy="38" r="3" />
+        <path d="M47 18h8M51 14v8" />
+      </g>
+    </svg>
+  );
+}
+
+export function DietIcon({ className = "", title = "Diet" }) {
+  return (
+    <svg className={`woofy-icon ${className}`} viewBox="0 0 64 64" role="img" aria-label={title}>
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g fill="none" stroke="#2E8FE5" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 36h28l-2.5 11H20.5L18 36Z" />
+        <path d="M27 30c0-4 3-7 7-7 2.4 0 4.4 1 5.8 2.8" />
+        <path d="M33 24c1-4 4.1-6.5 8.2-6.5-.2 4.2-2.9 7.2-7 7.6" />
+      </g>
+      <g fill="#2E8FE5">
+        <circle cx="28" cy="41" r="1.5" />
+        <circle cx="32" cy="39.8" r="1.5" />
+        <circle cx="36" cy="41" r="1.5" />
+        <path d="M28 44.4c0-1.8 1.8-3.3 4-3.3s4 1.5 4 3.3c0 1.5-1.3 2.5-4 2.5s-4-1-4-2.5Z" />
+      </g>
+    </svg>
+  );
+}
+
+export function InsuranceIcon({ className = "", title = "Insurance" }) {
+  return (
+    <svg className={`woofy-icon ${className}`} viewBox="0 0 64 64" role="img" aria-label={title}>
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <path
+        d="M32 14 47 20v11c0 10-6.2 16.5-15 20-8.8-3.5-15-10-15-20V20l15-6Z"
+        fill="none"
+        stroke="#2E8FE5"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <g fill="#2E8FE5">
+        <circle cx="28.2" cy="30.8" r="1.7" />
+        <circle cx="32" cy="29.4" r="1.7" />
+        <circle cx="35.8" cy="30.8" r="1.7" />
+        <path d="M27.8 34.7c0-2 1.8-3.6 4.2-3.6s4.2 1.6 4.2 3.6c0 1.7-1.4 2.7-4.2 2.7s-4.2-1-4.2-2.7Z" />
+      </g>
+    </svg>
+  );
+}
+
+export function EditControlIcon({ className = "", title = "Edit profile" }) {
+  return (
+    <svg className={`woofy-control-icon ${className}`} viewBox="0 0 32 32" role="img" aria-label={title}>
+      <g fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m9 23 1.5-5.5L21 7a3 3 0 0 1 4 4L14.5 21.5 9 23Z" />
+        <path d="m18.5 9.5 4 4" />
+      </g>
+    </svg>
+  );
+}

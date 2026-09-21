@@ -1,0 +1,41 @@
+/* Profile page custom WOOFY icons only.
+   Existing layout, spacing, typography and card styling stay unchanged. */
+
+.profile-page .page-header .round-button .woofy-control-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.profile-page .profile-row-icon {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.profile-page .profile-row-icon,
+.profile-page .profile-row-icon .woofy-icon {
+  width: 46px;
+  height: 46px;
+}
+
+.profile-page .identity-card .profile-row-icon,
+.profile-page .identity-card .profile-row-icon .woofy-icon {
+  width: 46px;
+  height: 46px;
+}
+
+.profile-page .profile-edit-button .woofy-control-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+@media (max-width: 370px) {
+  .profile-page .profile-row-icon,
+  .profile-page .profile-row-icon .woofy-icon,
+  .profile-page .identity-card .profile-row-icon,
+  .profile-page .identity-card .profile-row-icon .woofy-icon {
+    width: 44px;
+    height: 44px;
+  }
+}

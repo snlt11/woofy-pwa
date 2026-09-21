@@ -1,17 +1,18 @@
 import {
-  Activity,
-  Cake,
-  Cpu,
-  Mars,
-  Pencil,
-  Salad,
-  ShieldCheck,
-  Stethoscope,
-  Utensils,
-} from "lucide-react";
-
+  ActivityLevelIcon,
+  BirthdayIcon,
+  DietIcon,
+  EditControlIcon,
+  GenderIcon,
+  InsuranceIcon,
+  MealIcon,
+  MicrochipIcon,
+  VetIcon,
+} from "../../components/icons/WoofyIcons";
 import { ASSETS } from "../../config/assets";
 import { useWoofy } from "../../state/useWoofy";
+import "../../styles/woofy-icons.css";
+import "../../styles/profile-icons.css";
 
 export default function ProfilePage() {
   const {
@@ -26,7 +27,7 @@ export default function ProfilePage() {
         </div>
 
         <button className="round-button" type="button" aria-label="Edit profile">
-          <Pencil size={22} />
+          <EditControlIcon />
         </button>
       </header>
 
@@ -50,15 +51,15 @@ export default function ProfilePage() {
         <h2 className="section-title">About {pet.name}</h2>
 
         <div className="profile-list">
-          <ProfileRow icon={<Cake size={22} />} label="Birthday" value={pet.birthday} />
-          <ProfileRow icon={<Mars size={22} />} label="Gender" value={pet.gender} />
+          <ProfileRow icon={<BirthdayIcon />} label="Birthday" value={pet.birthday} />
+          <ProfileRow icon={<GenderIcon />} label="Gender" value={pet.gender} />
           <ProfileRow
-            icon={<Utensils size={22} />}
+            icon={<MealIcon title="Favorite food" />}
             label="Favorite food"
             value={pet.favoriteFood}
           />
           <ProfileRow
-            icon={<Activity size={22} />}
+            icon={<ActivityLevelIcon />}
             label="Activity level"
             value={pet.activityLevel}
           />
@@ -70,7 +71,7 @@ export default function ProfilePage() {
 
         <div className="identity-card">
           <div className="profile-row-icon">
-            <Cpu size={23} />
+            <MicrochipIcon />
           </div>
 
           <div>
@@ -86,13 +87,13 @@ export default function ProfilePage() {
 
         <div className="profile-list">
           <ProfileRow
-            icon={<Stethoscope size={22} />}
+            icon={<VetIcon />}
             label="Primary vet"
             value={pet.primaryVet}
           />
-          <ProfileRow icon={<Salad size={22} />} label="Diet" value={pet.diet} />
+          <ProfileRow icon={<DietIcon />} label="Diet" value={pet.diet} />
           <ProfileRow
-            icon={<ShieldCheck size={22} />}
+            icon={<InsuranceIcon />}
             label="Insurance"
             value={pet.insurance}
           />
@@ -100,7 +101,7 @@ export default function ProfilePage() {
       </section>
 
       <button className="profile-edit-button" type="button">
-        <Pencil size={20} />
+        <EditControlIcon />
         Edit {pet.name}&apos;s Profile
       </button>
     </main>
