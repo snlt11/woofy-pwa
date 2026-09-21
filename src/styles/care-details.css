@@ -1,32 +1,40 @@
 .care-details-page {
-  padding-bottom: calc(118px + env(safe-area-inset-bottom));
+  padding-bottom: calc(156px + env(safe-area-inset-bottom));
 }
 
 .care-details-header {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-columns: 40px minmax(0, 1fr);
   align-items: start;
-  gap: 12px;
-  margin: 8px 0 22px;
+  gap: 11px;
+
+  margin: 6px 0 18px;
 }
 
 .care-details-back {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
+
   display: grid;
   place-items: center;
+
   border: 1px solid #eee8e4;
-  border-radius: 15px;
+  border-radius: 14px;
+
   background: #fffdfb;
   color: #4f4946;
-  box-shadow: 0 5px 14px rgba(45, 35, 30, .045);
+
+  box-shadow: 0 4px 12px rgba(45, 35, 30, .04);
 }
 
 .care-details-header span {
   display: block;
-  margin: 1px 0 4px;
+
+  margin: 1px 0 3px;
+
   color: #6aa7d8;
-  font-size: 11px;
+
+  font-size: 10px;
   font-weight: 750;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -34,46 +42,58 @@
 
 .care-details-header h1 {
   margin: 0;
+
   color: #292527;
-  font-size: 34px;
-  line-height: 1.04;
-  letter-spacing: -.025em;
+
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -.02em;
 }
 
 .care-details-header p {
-  margin: 6px 0 0;
+  margin: 5px 0 0;
+
   color: #938c88;
-  font-size: 14px;
+
+  font-size: 13px;
 }
 
 .care-details-hero {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-columns: 62px minmax(0, 1fr);
   align-items: center;
-  gap: 16px;
-  margin-bottom: 26px;
-  padding: 18px;
+  gap: 14px;
+
+  margin-bottom: 22px;
+  padding: 15px;
+
   border: 1px solid #eee8e4;
-  border-radius: 26px;
+  border-radius: 23px;
+
   background: #fffdfb;
-  box-shadow: 0 8px 24px rgba(41, 37, 39, .045);
+
+  box-shadow: 0 6px 18px rgba(41, 37, 39, .035);
 }
 
 .care-details-icon,
 .care-details-icon .woofy-icon {
-  width: 72px;
-  height: 72px;
+  width: 62px;
+  height: 62px;
 }
 
 .care-details-hero-copy > span {
   display: inline-flex;
   align-items: center;
-  min-height: 25px;
-  padding: 0 9px;
+
+  min-height: 23px;
+  padding: 0 8px;
+
   border-radius: 999px;
+
   background: #f0ece8;
   color: #817975;
-  font-size: 11px;
+
+  font-size: 10px;
   font-weight: 700;
 }
 
@@ -83,47 +103,59 @@
 }
 
 .care-details-hero-copy h2 {
-  margin: 8px 0 4px;
+  margin: 7px 0 4px;
+
   color: #292527;
-  font-size: 20px;
+
+  font-size: 18px;
   line-height: 1.15;
 }
 
 .care-details-hero-copy p {
   margin: 0;
+
   color: #938c88;
-  font-size: 13px;
-  line-height: 1.45;
+
+  font-size: 12px;
+  line-height: 1.42;
 }
 
 .care-details-section {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .care-details-section > h2 {
-  margin: 0 0 12px;
+  margin: 0 0 11px;
+
   color: #292527;
-  font-size: 24px;
+
+  font-size: 22px;
   line-height: 1.15;
   letter-spacing: -.02em;
 }
 
 .care-details-list {
   overflow: hidden;
+
   border: 1px solid #eee8e4;
-  border-radius: 22px;
+  border-radius: 21px;
+
   background: #fffdfb;
-  box-shadow: 0 6px 18px rgba(41, 37, 39, .035);
+
+  box-shadow: 0 5px 16px rgba(41, 37, 39, .03);
 }
 
 .care-details-row {
-  min-height: 70px;
+  min-height: 62px;
+
   display: grid;
-  grid-template-columns: 42px minmax(0, 1fr);
+  grid-template-columns: 38px minmax(0, 1fr);
   align-items: center;
-  gap: 12px;
-  margin: 0 14px;
-  padding: 10px 0;
+  gap: 11px;
+
+  margin: 0 13px;
+  padding: 9px 0;
+
   border-bottom: 1px solid #f0ebe7;
 }
 
@@ -132,19 +164,22 @@
 }
 
 .care-details-row-icon {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
+
   display: grid;
   place-items: center;
-  border-radius: 14px;
+
+  border-radius: 13px;
+
   background: #eef7fd;
   color: #2e8fe5;
 }
 
 .care-details-row-icon.is-custom,
 .care-details-row-icon.is-custom .woofy-icon {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
 }
 
 .care-details-row > div:last-child {
@@ -153,33 +188,45 @@
 
 .care-details-row span {
   display: block;
-  margin-bottom: 2px;
+
+  margin-bottom: 1px;
+
   color: #938c88;
-  font-size: 11px;
+
+  font-size: 10px;
 }
 
 .care-details-row strong {
   display: block;
+
   overflow: hidden;
+
   color: #292527;
-  font-size: 15px;
+
+  font-size: 14px;
   line-height: 1.25;
+
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .care-details-note {
-  margin-bottom: 18px;
-  padding: 16px;
-  border-radius: 20px;
+  margin-bottom: 16px;
+  padding: 14px;
+
+  border-radius: 18px;
+
   background: #f4f8fb;
 }
 
 .care-details-note span {
   display: block;
-  margin-bottom: 5px;
+
+  margin-bottom: 4px;
+
   color: #5d96c2;
-  font-size: 11px;
+
+  font-size: 10px;
   font-weight: 750;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -187,48 +234,89 @@
 
 .care-details-note p {
   margin: 0;
+
   color: #5d5754;
-  font-size: 13px;
-  line-height: 1.5;
+
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .care-details-primary {
   width: 100%;
-  min-height: 56px;
+  min-height: 52px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
+
+  margin-bottom: 22px;
+
   border: 0;
-  border-radius: 18px;
+  border-radius: 16px;
+
   background: #68a3d2;
   color: #fff;
+
   font: inherit;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 750;
-  box-shadow: 0 9px 22px rgba(70, 143, 198, .18);
+
+  box-shadow: 0 7px 18px rgba(70, 143, 198, .15);
 }
 
 .care-details-primary.is-complete {
   border: 1px solid #e7e1dd;
+
   background: #fffdfb;
   color: #5d5754;
+
   box-shadow: none;
 }
 
 @media (max-width: 370px) {
+  .care-details-page {
+    padding-bottom: calc(148px + env(safe-area-inset-bottom));
+  }
+
+  .care-details-header {
+    grid-template-columns: 38px minmax(0, 1fr);
+  }
+
+  .care-details-back {
+    width: 38px;
+    height: 38px;
+  }
+
   .care-details-header h1 {
-    font-size: 31px;
+    font-size: 28px;
   }
 
   .care-details-hero {
-    grid-template-columns: 62px minmax(0, 1fr);
-    padding: 15px;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px;
   }
 
   .care-details-icon,
   .care-details-icon .woofy-icon {
-    width: 62px;
-    height: 62px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .care-details-section > h2 {
+    font-size: 21px;
+  }
+
+  .care-details-row {
+    grid-template-columns: 36px minmax(0, 1fr);
+    min-height: 60px;
+  }
+
+  .care-details-row-icon,
+  .care-details-row-icon.is-custom,
+  .care-details-row-icon.is-custom .woofy-icon {
+    width: 36px;
+    height: 36px;
   }
 }
