@@ -9,7 +9,6 @@ import PageTransition from "./PageTransition";
 export default function AppLayout() {
   const { pathname } = useLocation();
   const scrollRef = useRef(null);
-  const showBottomNav = pathname !== ROUTES.homeDetails;
 
   const {
     state: { onboarding },
@@ -25,13 +24,13 @@ export default function AppLayout() {
 
   return (
     <div className="app-shell">
-      <div className={"app-scroll " + (!showBottomNav ? "app-scroll--detail" : "")} ref={scrollRef}>
+      <div className="app-scroll" ref={scrollRef}>
         <PageTransition key={pathname}>
           <Outlet />
         </PageTransition>
       </div>
 
-      {showBottomNav && <BottomNav />}
+      <BottomNav />
     </div>
   );
 }
