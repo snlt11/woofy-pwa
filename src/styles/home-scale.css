@@ -1,0 +1,209 @@
+/* Home-only visual scale.
+   Keeps typography and icon sizing on one predictable system. */
+
+.home-page {
+  --home-section-title: 26px;
+  --home-card-title: 17px;
+  --home-body: 15px;
+  --home-meta: 14px;
+  --home-icon-tile: 54px;
+  --home-action-size: 44px;
+}
+
+/* Header */
+.home-user h1 {
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.home-user p {
+  margin-top: 4px;
+  font-size: var(--home-body);
+  line-height: 1.35;
+}
+
+.home-page .round-button {
+  width: 48px;
+  height: 48px;
+}
+
+.home-page .round-button > svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Buddy hero */
+.home-page .hero-info h2 {
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.home-page .hero-info p {
+  margin: 6px 0 15px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.home-page .mood-button {
+  min-height: 44px;
+  padding-inline: 13px;
+  gap: 7px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.home-page .mood-button > svg {
+  width: 19px;
+  height: 19px;
+}
+
+.home-page .mood-button > span {
+  font-size: 21px;
+  line-height: 1;
+}
+
+/* Section headings */
+.home-page .section-header {
+  margin-bottom: 14px;
+}
+
+.home-page .section-header h2,
+.home-page .section-title {
+  font-size: var(--home-section-title);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.home-page .section-title {
+  margin-bottom: 14px;
+}
+
+/* Add action */
+.home-page .add-button {
+  width: var(--home-action-size);
+  height: var(--home-action-size);
+  border-radius: 14px;
+}
+
+.home-page .add-button .woofy-state-icon {
+  width: var(--home-action-size);
+  height: var(--home-action-size);
+}
+
+/* Care rows */
+.home-page .care-list {
+  gap: 10px;
+}
+
+.home-page .care-item {
+  min-height: 84px;
+  padding: 13px 13px 13px 15px;
+  gap: 13px;
+}
+
+.home-page .care-icon,
+.home-page .care-icon .woofy-icon {
+  width: var(--home-icon-tile);
+  height: var(--home-icon-tile);
+  flex: 0 0 var(--home-icon-tile);
+}
+
+.home-page .care-copy {
+  gap: 3px;
+}
+
+.home-page .care-copy strong {
+  font-size: var(--home-card-title);
+  line-height: 1.25;
+}
+
+.home-page .care-copy span {
+  font-size: var(--home-meta);
+  line-height: 1.25;
+}
+
+.home-page .care-check,
+.home-page .care-check .woofy-state-icon {
+  width: var(--home-action-size);
+  height: var(--home-action-size);
+}
+
+.home-page .care-check {
+  flex: 0 0 var(--home-action-size);
+}
+
+.home-page .care-check.done {
+  transform: none;
+}
+
+/* Wellness cards */
+.home-page .wellness-grid {
+  gap: 12px;
+}
+
+.home-page .wellness-card {
+  min-height: 132px;
+  padding: 16px;
+}
+
+.home-page .wellness-icon,
+.home-page .wellness-icon .woofy-icon {
+  width: var(--home-icon-tile);
+  height: var(--home-icon-tile);
+}
+
+.home-page .wellness-icon {
+  margin-bottom: 12px;
+}
+
+.home-page .wellness-card strong {
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.home-page .wellness-card span {
+  margin-top: 4px;
+  font-size: var(--home-meta);
+  line-height: 1.25;
+}
+
+/* Bottom navigation scale on the mobile app shell */
+.woofy-tab-icon > svg {
+  width: 22px;
+  height: 22px;
+}
+
+.woofy-tab-label {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@media (max-width: 370px) {
+  .home-page {
+    --home-section-title: 24px;
+    --home-card-title: 16px;
+    --home-body: 14px;
+    --home-meta: 13px;
+    --home-icon-tile: 50px;
+    --home-action-size: 42px;
+  }
+
+  .home-user h1 {
+    font-size: 22px;
+  }
+
+  .home-page .hero-info h2 {
+    font-size: 27px;
+  }
+
+  .home-page .hero-info p {
+    font-size: 14px;
+  }
+
+  .home-page .wellness-card strong {
+    font-size: 21px;
+  }
+}

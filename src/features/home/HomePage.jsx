@@ -18,6 +18,7 @@ import {
 import { ASSETS } from "../../config/assets";
 import { useWoofy } from "../../state/useWoofy";
 import "../../styles/woofy-icons.css";
+import "../../styles/home-scale.css";
 
 const moods = [
   { id: "happy", label: "Happy", icon: Smile },
