@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 
 import PetProfileForm from "../../components/PetProfileForm";
 import {
@@ -141,39 +142,43 @@ export default function ProfilePage() {
         </button>
       </main>
 
-      {editing && (
-        <div
-          className="profile-edit-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="edit-pet-title"
-        >
-          <section className="profile-edit-sheet">
-            <header className="profile-edit-sheet-header">
-              <div>
-                <h2 id="edit-pet-title">Edit {pet.name}</h2>
-                <p>Changes are saved on this device and update every WOOFY page.</p>
-              </div>
+      {editing &&
+        createPortal(
+          <div
+            className="profile-edit-overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="edit-pet-title"
+          >
+            <section className="profile-edit-sheet">
+              <header className="profile-edit-sheet-header">
+                <div>
+                  <h2 id="edit-pet-title">Edit {pet.name}</h2>
+                  <p>
+                    Changes are saved on this device and update every WOOFY page.
+                  </p>
+                </div>
 
-              <button
-                className="profile-edit-sheet-close"
-                type="button"
-                aria-label="Close edit profile"
-                onClick={() => setEditing(false)}
-              >
-                ×
-              </button>
-            </header>
+                <button
+                  className="profile-edit-sheet-close"
+                  type="button"
+                  aria-label="Close edit profile"
+                  onClick={() => setEditing(false)}
+                >
+                  ×
+                </button>
+              </header>
 
-            <PetProfileForm
-              initialPet={pet}
-              onSubmit={saveProfile}
-              submitLabel="Save changes"
-              onCancel={() => setEditing(false)}
-            />
-          </section>
-        </div>
-      )}
+              <PetProfileForm
+                initialPet={pet}
+                onSubmit={saveProfile}
+                submitLabel="Save changes"
+                onCancel={() => setEditing(false)}
+              />
+            </section>
+          </div>,
+          document.body
+        )}
     </>
   );
 }
