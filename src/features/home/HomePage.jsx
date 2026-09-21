@@ -1,10 +1,12 @@
 import {
   Bell,
+  ChevronRight,
   Laugh,
   Leaf,
   Moon,
   Smile,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 import {
   AddIcon,
@@ -16,6 +18,7 @@ import {
   WeightIcon,
 } from "../../components/icons/WoofyIcons";
 import { ASSETS } from "../../config/assets";
+import { ROUTES } from "../../config/routes";
 import { useWoofy } from "../../state/useWoofy";
 import "../../styles/woofy-icons.css";
 import "../../styles/home-scale.css";
@@ -28,6 +31,8 @@ const moods = [
 ];
 
 export default function HomePage() {
+  const navigate = useNavigate();
+
   const {
     state: { pet, home, health },
     actions,
@@ -86,6 +91,15 @@ export default function HomePage() {
             <MoodIcon size={20} />
             {mood.label}
             <span aria-hidden="true">›</span>
+          </button>
+
+          <button
+            className="buddy-details-button"
+            type="button"
+            onClick={() => navigate(ROUTES.homeDetails)}
+          >
+            View details
+            <ChevronRight size={16} />
           </button>
         </div>
       </section>
