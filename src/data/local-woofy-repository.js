@@ -31,7 +31,10 @@ function normalizeSnapshot(input) {
       ...seed.home,
       ...home,
       careTasks: Array.isArray(home.careTasks)
-        ? home.careTasks
+        ? home.careTasks.map((task) => ({
+            ...(seed.home.careTasks.find((seedTask) => seedTask.id === task.id) || {}),
+            ...task,
+          }))
         : seed.home.careTasks,
     },
     planner: {
