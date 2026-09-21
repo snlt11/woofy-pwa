@@ -11,7 +11,7 @@ import {
   SleepIcon,
   SyringeIcon,
   VetCalendarIcon,
-  WalkIcon,
+  StepsIcon,
   WeightIcon,
 } from "../../components/icons/WoofyIcons";
 import { ASSETS } from "../../config/assets";
@@ -85,7 +85,7 @@ export default function HealthPage() {
             label="Weight"
           />
           <HealthStat
-            icon={<WalkIcon title="Steps" />}
+            icon={<StepsIcon />}
             value={health.steps.toLocaleString()}
             label="Steps"
           />
@@ -172,7 +172,10 @@ export default function HealthPage() {
         </div>
       </section>
 
-      <section className="health-two-column">
+      <section className="health-section health-care-section">
+        <h2 className="section-title">Care</h2>
+
+        <div className="health-two-column">
         <HealthMiniCard
           icon={<SyringeIcon />}
           title="Vaccinations"
@@ -187,6 +190,7 @@ export default function HealthPage() {
           status={health.medication.title}
           detail={health.medication.detail}
         />
+        </div>
       </section>
 
       <section className="health-section">

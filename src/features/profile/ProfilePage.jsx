@@ -24,6 +24,7 @@ export default function ProfilePage() {
       <header className="page-header">
         <div>
           <h1>Profile</h1>
+          <p>{pet.name}&apos;s profile &amp; care details</p>
         </div>
 
         <button className="round-button" type="button" aria-label="Edit profile">

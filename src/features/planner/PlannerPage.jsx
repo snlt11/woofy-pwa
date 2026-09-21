@@ -125,6 +125,11 @@ export default function PlannerPage() {
         </div>
       </section>
 
+      <div className="planner-section-heading">
+        <h2>Today&apos;s plan</h2>
+        <span>{planner.activities.length} activities</span>
+      </div>
+
       <section className="timeline" aria-label="Activities">
         {planner.activities.map((activity, index) => {
           const Icon = activityIcons[activity.type] ?? PlayIcon;

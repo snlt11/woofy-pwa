@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import AppProviders from "./app/AppProviders.jsx";
 import "./index.css";
+import "./styles/app-consistency.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

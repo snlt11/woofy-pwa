@@ -1,13 +1,18 @@
 import { NavLink } from "react-router-dom";
-import { CalendarDays, Heart, House, UserRound } from "lucide-react";
 
+import {
+  HealthNavIcon,
+  HomeNavIcon,
+  PlannerNavIcon,
+  ProfileNavIcon,
+} from "./icons/WoofyIcons";
 import { ROUTES } from "../config/routes";
 
 const tabs = [
-  { to: ROUTES.home, label: "Home", icon: House },
-  { to: ROUTES.planner, label: "Planner", icon: CalendarDays },
-  { to: ROUTES.health, label: "Health", icon: Heart },
-  { to: ROUTES.profile, label: "Profile", icon: UserRound },
+  { to: ROUTES.home, label: "Home", icon: HomeNavIcon },
+  { to: ROUTES.planner, label: "Planner", icon: PlannerNavIcon },
+  { to: ROUTES.health, label: "Health", icon: HealthNavIcon },
+  { to: ROUTES.profile, label: "Profile", icon: ProfileNavIcon },
 ];
 
 export default function BottomNav() {
@@ -22,7 +27,7 @@ export default function BottomNav() {
           }
         >
           <span className="woofy-tab-icon">
-            <Icon size={24} strokeWidth={2} />
+            <Icon />
           </span>
           <span className="woofy-tab-label">{label}</span>
         </NavLink>

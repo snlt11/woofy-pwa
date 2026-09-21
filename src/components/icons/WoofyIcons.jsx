@@ -563,3 +563,102 @@ export function EditControlIcon({ className = "", title = "Edit profile" }) {
     </svg>
   );
 }
+
+
+export function StepsIcon({ className = "", title = "Steps" }) {
+  return (
+    <svg
+      className={`woofy-icon ${className}`}
+      viewBox="0 0 64 64"
+      role="img"
+      aria-label={title}
+    >
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g
+        fill="none"
+        stroke="#2E8FE5"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M23 16c4 0 7 3.7 7 8.7 0 5.4-2.5 9.5-6.7 9.5-4.1 0-7.3-3.6-7.3-8.8C16 20.1 18.8 16 23 16Z" />
+        <path d="M19.7 36.5c3.6 0 6.5 2.7 6.5 6.2 0 3.1-2.3 5.3-5.6 5.3-3.8 0-6.8-2.8-6.8-6.4 0-2.9 2.4-5.1 5.9-5.1Z" />
+        <path d="M41 20c4 0 7 3.7 7 8.7 0 5.4-2.5 9.5-6.7 9.5-4.1 0-7.3-3.6-7.3-8.8C34 24.1 36.8 20 41 20Z" />
+        <path d="M37.7 40.5c3.6 0 6.5 2.7 6.5 6.2 0 3.1-2.3 5.3-5.6 5.3-3.8 0-6.8-2.8-6.8-6.4 0-2.9 2.4-5.1 5.9-5.1Z" />
+      </g>
+    </svg>
+  );
+}
+
+export function HomeNavIcon({ className = "", title = "Home" }) {
+  return (
+    <svg className={className} viewBox="0 0 32 32" role="img" aria-label={title}>
+      <path
+        d="M6.5 14.5 16 6l9.5 8.5v10a2 2 0 0 1-2 2H8.5a2 2 0 0 1-2-2v-10Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.5 26v-8h7v8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function PlannerNavIcon({ className = "", title = "Planner" }) {
+  return (
+    <svg className={className} viewBox="0 0 32 32" role="img" aria-label={title}>
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="6" y="8" width="20" height="18" rx="3.5" />
+        <path d="M6 13h20M11 5.5v5M21 5.5v5" />
+        <path d="M11 17h2M16 17h2M21 17h2M11 21h2M16 21h2M21 21h2" />
+      </g>
+    </svg>
+  );
+}
+
+export function HealthNavIcon({ className = "", title = "Health" }) {
+  return (
+    <svg className={className} viewBox="0 0 32 32" role="img" aria-label={title}>
+      <path
+        d="M16 26S6.5 20.4 6.5 13.6A5.6 5.6 0 0 1 16 9.5a5.6 5.6 0 0 1 9.5 4.1C25.5 20.4 16 26 16 26Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function ProfileNavIcon({ className = "", title = "Profile" }) {
+  return (
+    <svg className={className} viewBox="0 0 32 32" role="img" aria-label={title}>
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="16" cy="10.5" r="4.5" />
+        <path d="M8.5 26c.7-5 3.5-7.5 7.5-7.5s6.8 2.5 7.5 7.5" />
+      </g>
+    </svg>
+  );
+}

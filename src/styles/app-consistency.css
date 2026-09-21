@@ -1,0 +1,601 @@
+/* =========================================================
+   WOOFY APP CONSISTENCY LAYER
+   Shared visual scale for Home, Planner, Health and Profile.
+   Loaded after the legacy page CSS so every tab follows one
+   typography, spacing, radius, icon and navigation system.
+========================================================= */
+
+:root {
+  --font-page-title: 36px;
+  --font-section-title: 25px;
+  --font-card-title: 17px;
+  --font-body: 14px;
+  --font-small: 12px;
+  --font-caption: 11px;
+
+  --app-card-radius: 22px;
+  --app-hero-radius: 28px;
+  --app-control-radius: 15px;
+  --app-card-shadow: 0 6px 18px rgba(41, 37, 39, 0.035);
+
+  --app-icon-tile: 48px;
+  --app-action-size: 44px;
+}
+
+/* ---------- Shared page frame ---------- */
+
+.app-shell .home-page,
+.app-shell .app-page {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.app-shell .page-header {
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.app-shell .page-header h1 {
+  font-size: var(--font-page-title);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.app-shell .page-header p {
+  margin-top: 5px;
+  font-size: var(--font-body);
+  line-height: 1.35;
+}
+
+.app-shell .round-button {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--app-control-radius);
+}
+
+.app-shell .section-header {
+  margin-bottom: 14px;
+}
+
+.app-shell .section-header h2,
+.app-shell .section-title,
+.app-shell .planner-section-heading h2 {
+  margin: 0;
+  font-size: var(--font-section-title);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.app-shell .home-section,
+.app-shell .health-section,
+.app-shell .profile-section {
+  margin-bottom: 24px;
+}
+
+/* ---------- Home ---------- */
+
+.app-shell .home-header {
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.app-shell .home-user h1 {
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.app-shell .home-user p {
+  margin-top: 4px;
+  font-size: var(--font-body);
+  line-height: 1.35;
+}
+
+.app-shell .buddy-card {
+  border-radius: var(--app-hero-radius);
+  margin-bottom: 26px;
+}
+
+.app-shell .hero-info h2 {
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.app-shell .hero-info p {
+  margin: 6px 0 15px;
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.app-shell .mood-button {
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.app-shell .home-page {
+  --home-section-title: var(--font-section-title);
+  --home-card-title: var(--font-card-title);
+  --home-body: var(--font-body);
+  --home-meta: 13px;
+  --home-icon-tile: 52px;
+  --home-action-size: var(--app-action-size);
+}
+
+.app-shell .care-item {
+  min-height: 84px;
+  padding: 13px 13px 13px 15px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .care-copy strong {
+  font-size: var(--font-card-title);
+  line-height: 1.25;
+}
+
+.app-shell .care-copy span {
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.app-shell .wellness-card {
+  min-height: 132px;
+  padding: 16px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .wellness-card strong {
+  font-size: 23px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.app-shell .wellness-card span {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+/* ---------- Planner ---------- */
+
+.app-shell .planner-calendar {
+  margin-bottom: 18px;
+}
+
+.app-shell .month-row h2 {
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.app-shell .calendar-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+}
+
+.app-shell .calendar-day {
+  border-radius: 16px;
+}
+
+.app-shell .calendar-day span {
+  font-size: 10px;
+}
+
+.app-shell .calendar-day strong {
+  font-size: 19px;
+}
+
+.app-shell .planner-summary {
+  min-height: 132px;
+  padding: 18px;
+  margin-bottom: 22px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .planner-summary-copy h2 {
+  margin-bottom: 4px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.app-shell .planner-summary-copy p {
+  font-size: var(--font-body);
+}
+
+.app-shell .planner-note {
+  right: 14px;
+  top: 18px;
+  padding: 7px 9px;
+  border-radius: 13px;
+  background: #eef5fa;
+  color: #4f7da0;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  transform: none;
+}
+
+.app-shell .planner-note span {
+  margin-top: 2px;
+  font-size: 17px;
+}
+
+.app-shell .planner-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 14px;
+}
+
+.app-shell .planner-section-heading span {
+  flex: 0 0 auto;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.app-shell .timeline {
+  margin-bottom: 22px;
+}
+
+.app-shell .timeline-row {
+  grid-template-columns: 52px 20px minmax(0, 1fr);
+  min-height: 100px;
+}
+
+.app-shell .timeline-time strong {
+  font-size: 14px;
+}
+
+.app-shell .timeline-time span {
+  font-size: 12px;
+}
+
+.app-shell .timeline-card {
+  margin-bottom: 9px;
+  padding: 12px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .planner-page .timeline-copy strong {
+  font-size: var(--font-card-title);
+}
+
+.app-shell .planner-page .timeline-copy span {
+  font-size: 13px;
+}
+
+.app-shell .planner-add-button {
+  width: min(76%, 290px);
+  min-height: 58px;
+  margin: 4px auto 20px;
+  font-size: 16px;
+  border-radius: 22px;
+}
+
+/* ---------- Health ---------- */
+
+.app-shell .health-hero {
+  min-height: 166px;
+  padding: 18px;
+  margin-bottom: 24px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .health-hero-content h2 {
+  margin-bottom: 5px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.app-shell .health-hero-content p {
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.app-shell .health-progress {
+  height: 10px;
+}
+
+.app-shell .health-stat-grid {
+  gap: 10px;
+}
+
+.app-shell .health-stat {
+  padding: 13px 10px;
+  border-radius: 20px;
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .health-stat strong {
+  font-size: 17px;
+  line-height: 1.15;
+}
+
+.app-shell .health-stat span {
+  font-size: 12px;
+}
+
+.app-shell .weight-card {
+  padding: 17px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .weight-summary strong {
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.app-shell .weight-summary span {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.app-shell .vet-card {
+  padding: 15px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .vet-main strong {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.app-shell .vet-main span {
+  font-size: 12px;
+}
+
+.app-shell .vet-meta div {
+  font-size: 11px;
+}
+
+.app-shell .details-button {
+  padding: 9px 13px;
+  font-size: 13px;
+}
+
+.app-shell .health-care-section {
+  margin-bottom: 20px;
+}
+
+.app-shell .health-care-section .section-title {
+  margin-bottom: 14px;
+}
+
+.app-shell .health-two-column {
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.app-shell .health-mini-card {
+  padding: 13px;
+  border-radius: 20px;
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .health-mini-copy strong {
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.app-shell .health-mini-copy span {
+  font-size: 12px;
+}
+
+.app-shell .health-mini-copy small {
+  font-size: 10px;
+  line-height: 1.25;
+}
+
+.app-shell .activity-card {
+  padding: 15px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .activity-label {
+  font-size: 12px;
+}
+
+.app-shell .activity-content strong {
+  font-size: 17px;
+}
+
+.app-shell .activity-card p {
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+/* ---------- Profile ---------- */
+
+.app-shell .profile-hero {
+  margin-bottom: 22px;
+}
+
+.app-shell .profile-image {
+  width: 176px;
+  height: 176px;
+  margin-bottom: 13px;
+}
+
+.app-shell .profile-hero h2 {
+  font-size: 31px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.app-shell .profile-hero p {
+  margin: 4px 0 2px;
+  font-size: 16px;
+}
+
+.app-shell .profile-hero span {
+  font-size: 13px;
+}
+
+.app-shell .profile-summary {
+  margin-bottom: 26px;
+  padding: 17px 8px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .profile-stat strong {
+  font-size: 17px;
+}
+
+.app-shell .profile-stat span {
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.app-shell .profile-list {
+  gap: 10px;
+}
+
+.app-shell .profile-row {
+  min-height: 72px;
+  padding: 12px 14px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .profile-row-copy span,
+.app-shell .identity-card span {
+  font-size: 12px;
+}
+
+.app-shell .profile-row-copy strong,
+.app-shell .identity-card strong {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.app-shell .identity-card {
+  padding: 14px;
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+
+.app-shell .identity-card small {
+  font-size: 11px;
+}
+
+.app-shell .profile-edit-button {
+  min-height: 58px;
+  margin: 4px 0 22px;
+  font-size: 16px;
+}
+
+/* ---------- Shared custom-icon sizing ---------- */
+
+.app-shell .care-icon,
+.app-shell .care-icon .woofy-icon,
+.app-shell .wellness-icon,
+.app-shell .wellness-icon .woofy-icon {
+  width: 52px;
+  height: 52px;
+}
+
+.app-shell .planner-page .timeline-icon,
+.app-shell .planner-page .timeline-icon .woofy-icon {
+  width: var(--app-icon-tile);
+  height: var(--app-icon-tile);
+  flex-basis: var(--app-icon-tile);
+}
+
+.app-shell .health-page .health-stat-icon,
+.app-shell .health-page .health-stat-icon .woofy-icon,
+.app-shell .health-page .health-mini-icon,
+.app-shell .health-page .health-mini-icon .woofy-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.app-shell .health-page .activity-icon,
+.app-shell .health-page .activity-icon .woofy-icon {
+  width: 48px;
+  height: 48px;
+  flex-basis: 48px;
+}
+
+.app-shell .profile-page .profile-row-icon,
+.app-shell .profile-page .profile-row-icon .woofy-icon,
+.app-shell .profile-page .identity-card .profile-row-icon,
+.app-shell .profile-page .identity-card .profile-row-icon .woofy-icon {
+  width: 46px;
+  height: 46px;
+}
+
+/* ---------- Bottom navigation ---------- */
+
+.app-shell .woofy-tabbar {
+  left: 14px;
+  right: 14px;
+  height: 78px;
+  padding: 7px;
+  border-radius: 28px;
+}
+
+.app-shell .woofy-tab {
+  height: 64px;
+  gap: 3px;
+}
+
+.app-shell .woofy-tab-icon {
+  width: 44px;
+  height: 36px;
+  flex-basis: 36px;
+}
+
+.app-shell .woofy-tab-icon > svg {
+  width: 22px;
+  height: 22px;
+}
+
+.app-shell .woofy-tab-label {
+  height: 15px;
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 500;
+}
+
+.app-shell .woofy-tab.is-active .woofy-tab-label {
+  font-weight: 650;
+}
+
+/* ---------- Small phones ---------- */
+
+@media (max-width: 370px) {
+  :root {
+    --font-page-title: 34px;
+    --font-section-title: 23px;
+    --font-card-title: 16px;
+    --font-body: 13px;
+  }
+
+  .app-shell .home-page,
+  .app-shell .app-page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .app-shell .profile-image {
+    width: 158px;
+    height: 158px;
+  }
+
+  .app-shell .planner-add-button {
+    min-height: 54px;
+    font-size: 15px;
+  }
+}
