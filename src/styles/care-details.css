@@ -1,0 +1,234 @@
+.care-details-page {
+  padding-bottom: calc(118px + env(safe-area-inset-bottom));
+}
+
+.care-details-header {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  margin: 8px 0 22px;
+}
+
+.care-details-back {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #eee8e4;
+  border-radius: 15px;
+  background: #fffdfb;
+  color: #4f4946;
+  box-shadow: 0 5px 14px rgba(45, 35, 30, .045);
+}
+
+.care-details-header span {
+  display: block;
+  margin: 1px 0 4px;
+  color: #6aa7d8;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.care-details-header h1 {
+  margin: 0;
+  color: #292527;
+  font-size: 34px;
+  line-height: 1.04;
+  letter-spacing: -.025em;
+}
+
+.care-details-header p {
+  margin: 6px 0 0;
+  color: #938c88;
+  font-size: 14px;
+}
+
+.care-details-hero {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
+  padding: 18px;
+  border: 1px solid #eee8e4;
+  border-radius: 26px;
+  background: #fffdfb;
+  box-shadow: 0 8px 24px rgba(41, 37, 39, .045);
+}
+
+.care-details-icon,
+.care-details-icon .woofy-icon {
+  width: 72px;
+  height: 72px;
+}
+
+.care-details-hero-copy > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: #f0ece8;
+  color: #817975;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.care-details-hero-copy > span.is-complete {
+  background: #e9f7ee;
+  color: #41a767;
+}
+
+.care-details-hero-copy h2 {
+  margin: 8px 0 4px;
+  color: #292527;
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.care-details-hero-copy p {
+  margin: 0;
+  color: #938c88;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.care-details-section {
+  margin-bottom: 22px;
+}
+
+.care-details-section > h2 {
+  margin: 0 0 12px;
+  color: #292527;
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+
+.care-details-list {
+  overflow: hidden;
+  border: 1px solid #eee8e4;
+  border-radius: 22px;
+  background: #fffdfb;
+  box-shadow: 0 6px 18px rgba(41, 37, 39, .035);
+}
+
+.care-details-row {
+  min-height: 70px;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  margin: 0 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0ebe7;
+}
+
+.care-details-row:last-child {
+  border-bottom: 0;
+}
+
+.care-details-row-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #eef7fd;
+  color: #2e8fe5;
+}
+
+.care-details-row-icon.is-custom,
+.care-details-row-icon.is-custom .woofy-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.care-details-row > div:last-child {
+  min-width: 0;
+}
+
+.care-details-row span {
+  display: block;
+  margin-bottom: 2px;
+  color: #938c88;
+  font-size: 11px;
+}
+
+.care-details-row strong {
+  display: block;
+  overflow: hidden;
+  color: #292527;
+  font-size: 15px;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.care-details-note {
+  margin-bottom: 18px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #f4f8fb;
+}
+
+.care-details-note span {
+  display: block;
+  margin-bottom: 5px;
+  color: #5d96c2;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.care-details-note p {
+  margin: 0;
+  color: #5d5754;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.care-details-primary {
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 18px;
+  background: #68a3d2;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 750;
+  box-shadow: 0 9px 22px rgba(70, 143, 198, .18);
+}
+
+.care-details-primary.is-complete {
+  border: 1px solid #e7e1dd;
+  background: #fffdfb;
+  color: #5d5754;
+  box-shadow: none;
+}
+
+@media (max-width: 370px) {
+  .care-details-header h1 {
+    font-size: 31px;
+  }
+
+  .care-details-hero {
+    grid-template-columns: 62px minmax(0, 1fr);
+    padding: 15px;
+  }
+
+  .care-details-icon,
+  .care-details-icon .woofy-icon {
+    width: 62px;
+    height: 62px;
+  }
+}
