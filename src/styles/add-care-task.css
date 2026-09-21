@@ -46,11 +46,8 @@
 
 .add-care-header span {
   display: block;
-
   margin-bottom: 3px;
-
   color: #6aa7d8;
-
   font-size: 10px;
   font-weight: 750;
   letter-spacing: .08em;
@@ -59,9 +56,7 @@
 
 .add-care-header h2 {
   margin: 0;
-
   color: #292527;
-
   font-size: 24px;
   line-height: 1.08;
   letter-spacing: -.02em;
@@ -69,9 +64,7 @@
 
 .add-care-header p {
   margin: 5px 0 0;
-
   color: #938c88;
-
   font-size: 12px;
   line-height: 1.4;
 }
@@ -79,7 +72,6 @@
 .add-care-close {
   width: 36px;
   height: 36px;
-
   flex: 0 0 36px;
 
   display: grid;
@@ -99,7 +91,7 @@
 
 .add-care-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 9px;
 }
 
@@ -114,7 +106,6 @@
 
 .add-care-field > span {
   color: #6f6966;
-
   font-size: 11px;
   font-weight: 650;
 }
@@ -124,6 +115,7 @@
 .add-care-field textarea {
   width: 100%;
   min-width: 0;
+  max-width: 100%;
 
   border: 1px solid #e7e1dd;
   border-radius: 14px;
@@ -144,10 +136,8 @@
 
 .add-care-field textarea {
   resize: vertical;
-
   min-height: 72px;
   padding: 10px 12px;
-
   line-height: 1.4;
 }
 
@@ -158,34 +148,49 @@
   box-shadow: 0 0 0 3px rgba(105, 174, 222, .09);
 }
 
-.add-care-time {
-  position: relative;
+.add-care-time-button {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+
+  display: grid;
+  grid-template-columns: 17px minmax(0, 1fr) 15px;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 11px;
+
+  border: 1px solid #e7e1dd;
+  border-radius: 14px;
+
+  background: #fffdfb;
+  color: #292527;
+
+  font: inherit;
+  font-size: 15px;
+  text-align: left;
 }
 
-.add-care-time > svg {
-  position: absolute;
-  left: 11px;
-  top: 50%;
-  z-index: 1;
-
-  width: 16px;
-  height: 16px;
-
-  transform: translateY(-50%);
-
+.add-care-time-button > svg {
   color: #8792a4;
-  pointer-events: none;
 }
 
-.add-care-time input {
-  padding-left: 35px;
+.add-care-time-button > span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.add-care-time-button:focus-visible {
+  outline: none;
+  border-color: rgba(80, 158, 216, .58);
+  box-shadow: 0 0 0 3px rgba(105, 174, 222, .09);
 }
 
 .add-care-error {
   margin: 0;
-
   color: #9a4f4f;
-
   font-size: 11px;
 }
 
@@ -200,9 +205,7 @@
 .add-care-secondary,
 .add-care-primary {
   min-height: 48px;
-
   border-radius: 15px;
-
   font: inherit;
   font-size: 14px;
   font-weight: 750;
@@ -210,29 +213,163 @@
 
 .add-care-secondary {
   border: 1px solid #e7e1dd;
-
   background: #fffdfb;
   color: #5d5754;
 }
 
 .add-care-primary {
   border: 0;
+  background: #68a3d2;
+  color: #fff;
+  box-shadow: 0 7px 18px rgba(70, 143, 198, .14);
+}
+
+.add-care-time-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5300;
+
+  display: grid;
+  place-items: center;
+
+  padding: 18px;
+
+  background: rgba(36, 32, 30, .30);
+}
+
+.add-care-time-dialog {
+  width: min(100%, 320px);
+
+  padding: 16px;
+
+  border: 1px solid #ebe5e1;
+  border-radius: 24px;
+
+  background: #fffdfb;
+  box-shadow: 0 22px 60px rgba(30, 26, 24, .18);
+}
+
+.add-care-time-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 14px;
+}
+
+.add-care-time-dialog-header span {
+  display: block;
+  margin-bottom: 3px;
+  color: #6aa7d8;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.add-care-time-dialog-header h3 {
+  margin: 0;
+  color: #292527;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.add-care-time-dialog-header button {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #eee9e5;
+  color: #5d5754;
+}
+
+.add-care-time-selects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+
+  margin-bottom: 12px;
+}
+
+.add-care-time-selects label {
+  display: grid;
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.add-care-time-selects label > span {
+  color: #6f6966;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.add-care-time-selects select {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+
+  padding: 0 8px;
+
+  border: 1px solid #e7e1dd;
+  border-radius: 13px;
+  outline: none;
+
+  background: #f8f5f2;
+  color: #292527;
+
+  font: inherit;
+  font-size: 14px;
+}
+
+.add-care-time-confirm {
+  width: 100%;
+  min-height: 46px;
+
+  border: 0;
+  border-radius: 14px;
 
   background: #68a3d2;
   color: #fff;
 
-  box-shadow: 0 7px 18px rgba(70, 143, 198, .14);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 750;
 }
 
 @media (max-width: 520px) {
   .add-care-field input,
   .add-care-field select,
-  .add-care-field textarea {
+  .add-care-field textarea,
+  .add-care-time-button,
+  .add-care-time-selects select {
     font-size: 16px;
   }
 
   .add-care-sheet {
     max-height: 80dvh;
+  }
+
+  .add-care-time-overlay {
+    align-items: end;
+
+    padding:
+      12px
+      12px
+      calc(12px + env(safe-area-inset-bottom));
+  }
+
+  .add-care-time-dialog {
+    width: 100%;
+    max-width: 410px;
+    border-radius: 24px;
   }
 }
 
@@ -256,7 +393,8 @@
   }
 
   .add-care-field input,
-  .add-care-field select {
+  .add-care-field select,
+  .add-care-time-button {
     height: 44px;
   }
 }
