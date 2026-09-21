@@ -193,3 +193,115 @@ export function PawAccentIcon({ className = "", title = "Paw" }) {
     </svg>
   );
 }
+
+
+export function MedicineIcon({ className = "", title = "Medicine" }) {
+  return (
+    <svg
+      className={`woofy-icon ${className}`}
+      viewBox="0 0 64 64"
+      role="img"
+      aria-label={title}
+    >
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g
+        fill="none"
+        stroke="#2E8FE5"
+        strokeWidth="3.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M20.5 39.5 39.5 20.5a8 8 0 0 1 11.3 11.3L31.8 50.8a8 8 0 0 1-11.3-11.3Z" />
+        <path d="m27.5 32.5 11 11" />
+      </g>
+    </svg>
+  );
+}
+
+export function PlayIcon({ className = "", title = "Play time" }) {
+  return (
+    <svg
+      className={`woofy-icon ${className}`}
+      viewBox="0 0 64 64"
+      role="img"
+      aria-label={title}
+    >
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g
+        fill="none"
+        stroke="#2E8FE5"
+        strokeWidth="3.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="32" cy="32" r="15.5" />
+        <path d="M20 22.5c6.4 2 10.2 6.6 11.6 13.7" />
+        <path d="M43.6 21.8c-5.7 4.3-8.5 9.2-8.4 14.8" />
+        <path d="M20.5 43c5.9-3 12.2-3.6 19-1.8" />
+      </g>
+    </svg>
+  );
+}
+
+export function PlannerCalendarIcon({ className = "", title = "Calendar" }) {
+  return (
+    <svg
+      className={`woofy-control-icon ${className}`}
+      viewBox="0 0 32 32"
+      role="img"
+      aria-label={title}
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="6" y="8" width="20" height="18" rx="3.5" />
+        <path d="M6 13h20M11 5.5v5M21 5.5v5" />
+        <path d="M11 17h2M16 17h2M21 17h2M11 21h2M16 21h2M21 21h2" />
+      </g>
+    </svg>
+  );
+}
+
+export function PreviousIcon({ className = "", title = "Previous" }) {
+  return (
+    <svg
+      className={`woofy-control-icon ${className}`}
+      viewBox="0 0 32 32"
+      role="img"
+      aria-label={title}
+    >
+      <path
+        d="m19 9-7 7 7 7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function NextIcon({ className = "", title = "Next" }) {
+  return (
+    <svg
+      className={`woofy-control-icon ${className}`}
+      viewBox="0 0 32 32"
+      role="img"
+      aria-label={title}
+    >
+      <path
+        d="m13 9 7 7-7 7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

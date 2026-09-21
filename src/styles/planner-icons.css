@@ -1,0 +1,80 @@
+/* Planner icon system based on the WOOFY custom icon sheet. */
+
+.planner-page .planner-calendar-shortcut {
+  color: var(--charcoal);
+}
+
+.planner-page .planner-calendar-shortcut .woofy-control-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.planner-page .calendar-arrow .woofy-control-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.planner-page .timeline-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.planner-page .timeline-icon .woofy-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.planner-page .care-check,
+.planner-page .care-check.done {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  padding: 0;
+  background: transparent;
+  transform: none;
+}
+
+.planner-page .care-check .woofy-state-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.planner-page .timeline-copy strong {
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.planner-page .timeline-copy span {
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.planner-page .timeline-time strong {
+  font-size: 15px;
+  line-height: 1.1;
+}
+
+.planner-page .timeline-time span {
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.1;
+}
+
+@media (max-width: 370px) {
+  .planner-page .timeline-icon,
+  .planner-page .timeline-icon .woofy-icon {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .planner-page .care-check,
+  .planner-page .care-check .woofy-state-icon {
+    width: 42px;
+    height: 42px;
+  }
+}

@@ -1,16 +1,16 @@
-import {
-  CalendarDays,
-  Check,
-  ChevronLeft,
-  ChevronRight,
-  Circle,
-  CircleDot,
-  Footprints,
-  Pill,
-  Plus,
-  Utensils,
-} from "lucide-react";
+import { Plus } from "lucide-react";
 
+import {
+  CompleteIcon,
+  IncompleteIcon,
+  MealIcon,
+  MedicineIcon,
+  NextIcon,
+  PlannerCalendarIcon,
+  PlayIcon,
+  PreviousIcon,
+  WalkIcon,
+} from "../../components/icons/WoofyIcons";
 import { ASSETS } from "../../config/assets";
 import {
   addDays,
@@ -21,12 +21,14 @@ import {
   toISODate,
 } from "../../lib/date";
 import { useWoofy } from "../../state/useWoofy";
+import "../../styles/woofy-icons.css";
+import "../../styles/planner-icons.css";
 
 const activityIcons = {
-  meal: Utensils,
-  walk: Footprints,
-  medicine: Pill,
-  play: CircleDot,
+  meal: MealIcon,
+  walk: WalkIcon,
+  medicine: MedicineIcon,
+  play: PlayIcon,
 };
 
 export default function PlannerPage() {
@@ -51,12 +53,12 @@ export default function PlannerPage() {
         </div>
 
         <button
-          className="round-button"
+          className="round-button planner-calendar-shortcut"
           type="button"
           aria-label="Jump to today"
           onClick={() => actions.setPlannerDate(toISODate(new Date()))}
         >
-          <CalendarDays size={23} />
+          <PlannerCalendarIcon />
         </button>
       </header>
 
@@ -68,7 +70,7 @@ export default function PlannerPage() {
             aria-label="Previous week"
             onClick={() => shiftWeek(-1)}
           >
-            <ChevronLeft size={22} />
+            <PreviousIcon />
           </button>
 
           <h2>{formatMonthYear(selectedDate)}</h2>
@@ -79,7 +81,7 @@ export default function PlannerPage() {
             aria-label="Next week"
             onClick={() => shiftWeek(1)}
           >
-            <ChevronRight size={22} />
+            <NextIcon />
           </button>
         </div>
 
@@ -125,13 +127,13 @@ export default function PlannerPage() {
 
       <section className="timeline" aria-label="Activities">
         {planner.activities.map((activity, index) => {
-          const Icon = activityIcons[activity.type] ?? CircleDot;
+          const Icon = activityIcons[activity.type] ?? PlayIcon;
 
           return (
             <TimelineItem
               key={activity.id}
               activity={activity}
-              icon={<Icon size={22} />}
+              icon={<Icon />}
               last={index === planner.activities.length - 1}
               onToggle={() => actions.togglePlannerActivity(activity.id)}
             />
@@ -140,7 +142,7 @@ export default function PlannerPage() {
       </section>
 
       <button className="planner-add-button" type="button">
-        <Plus size={28} />
+        <Plus size={26} />
         <span>Add activity</span>
       </button>
     </main>
@@ -190,7 +192,7 @@ function TimelineItem({ activity, icon, last = false, onToggle }) {
             activity.completed ? "not complete" : "complete"
           }`}
         >
-          {activity.completed ? <Check size={21} /> : <Circle size={25} />}
+          {activity.completed ? <CompleteIcon /> : <IncompleteIcon />}
         </button>
       </div>
     </article>
