@@ -1,0 +1,251 @@
+.pet-profile-form {
+  display: grid;
+  gap: 18px;
+}
+
+.pet-form-section {
+  padding: 18px;
+  border: 1px solid #eee8e4;
+  border-radius: 24px;
+  background: #fffdfb;
+  box-shadow: 0 8px 24px rgba(45, 35, 30, 0.045);
+}
+
+.pet-form-section-heading {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.pet-form-section-heading > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pet-form-section-heading span {
+  color: #6aa7d8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pet-form-section-heading h2 {
+  margin: 0;
+  color: #292527;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.pet-form-section-heading p {
+  margin: 0;
+  color: #938c88;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.pet-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.pet-field {
+  display: grid;
+  gap: 7px;
+}
+
+.pet-field-full {
+  grid-column: 1 / -1;
+}
+
+.pet-field > span {
+  color: #6f6966;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.pet-field input,
+.pet-field select {
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 0 13px;
+  border: 1px solid #e7e1dd;
+  border-radius: 15px;
+  outline: none;
+  background: #f8f5f2;
+  color: #292527;
+  font: inherit;
+  font-size: 14px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.pet-field input:focus,
+.pet-field select:focus {
+  border-color: rgba(80, 158, 216, .58);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(105, 174, 222, .12);
+}
+
+.pet-form-error {
+  margin: -2px 2px 0;
+  color: #b64d4d;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.pet-form-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.pet-form-actions:has(.pet-form-secondary) {
+  grid-template-columns: .8fr 1.2fr;
+}
+
+.pet-form-primary,
+.pet-form-secondary {
+  min-height: 54px;
+  border: 0;
+  border-radius: 18px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.pet-form-primary {
+  background: #68a3d2;
+  color: white;
+  box-shadow: 0 9px 22px rgba(70, 143, 198, .18);
+}
+
+.pet-form-secondary {
+  border: 1px solid #e7e1dd;
+  background: #fffdfb;
+  color: #5d5754;
+}
+
+.onboarding-profile {
+  width: min(100%, 440px);
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding:
+    calc(28px + env(safe-area-inset-top))
+    18px
+    calc(30px + env(safe-area-inset-bottom));
+  background: #fbf7f2;
+}
+
+.onboarding-profile-header {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.onboarding-profile-header img {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+}
+
+.onboarding-profile-header span {
+  display: block;
+  margin-bottom: 3px;
+  color: #6aa7d8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.onboarding-profile-header h1 {
+  margin: 0;
+  color: #292527;
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+
+.onboarding-profile-header p {
+  margin: 5px 0 0;
+  color: #928b87;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.profile-edit-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  align-items: end;
+  background: rgba(36, 32, 30, .24);
+}
+
+.profile-edit-sheet {
+  max-height: 92%;
+  overflow-y: auto;
+  padding:
+    18px
+    18px
+    calc(24px + env(safe-area-inset-bottom));
+  border-radius: 30px 30px 0 0;
+  background: #fbf7f2;
+  box-shadow: 0 -18px 48px rgba(30, 26, 24, .14);
+}
+
+.profile-edit-sheet-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.profile-edit-sheet-header h2 {
+  margin: 0;
+  color: #292527;
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.profile-edit-sheet-header p {
+  margin: 5px 0 0;
+  color: #938c88;
+  font-size: 13px;
+}
+
+.profile-edit-sheet-close {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #eee9e5;
+  color: #514b48;
+  font-size: 22px;
+  line-height: 1;
+}
+
+@media (max-width: 370px) {
+  .pet-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pet-field-full {
+    grid-column: auto;
+  }
+
+  .onboarding-profile {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
