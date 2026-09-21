@@ -1,10 +1,12 @@
 import {
   Bell,
+  ChevronRight,
   Laugh,
   Leaf,
   Moon,
   Smile,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import {
   AddIcon,
   CompleteIcon,
@@ -15,6 +17,7 @@ import {
   WeightIcon,
 } from "../../components/icons/WoofyIcons";
 import { ASSETS } from "../../config/assets";
+import { ROUTES } from "../../config/routes";
 import { useWoofy } from "../../state/useWoofy";
 import "../../styles/woofy-icons.css";
 import "../../styles/home-scale.css";
@@ -27,6 +30,8 @@ const moods = [
 ];
 
 export default function HomePage() {
+  const navigate = useNavigate();
+
   const {
     state: { pet, home, health },
     actions,
@@ -103,6 +108,7 @@ export default function HomePage() {
             <CareItem
               key={task.id}
               task={task}
+              onOpen={() => navigate(ROUTES.careDetails.replace(":taskId", task.id))}
               onToggle={() => actions.toggleCareTask(task.id)}
             />
           ))}
@@ -129,19 +135,28 @@ export default function HomePage() {
   );
 }
 
-function CareItem({ task, onToggle }) {
+function CareItem({ task, onOpen, onToggle }) {
   const Icon = task.type === "walk" ? WalkIcon : MealIcon;
 
   return (
-    <article className="care-item">
-      <div className="care-icon">
-        <Icon />
-      </div>
+    <article className="care-item care-item-with-details">
+      <button
+        className="care-open"
+        type="button"
+        onClick={onOpen}
+        aria-label={`View details for ${task.title}`}
+      >
+        <div className="care-icon">
+          <Icon />
+        </div>
 
-      <div className="care-copy">
-        <strong>{task.title}</strong>
-        <span>{task.time}</span>
-      </div>
+        <div className="care-copy">
+          <strong>{task.title}</strong>
+          <span>{task.time}</span>
+        </div>
+
+        <ChevronRight className="care-detail-chevron" size={18} aria-hidden="true" />
+      </button>
 
       <button
         className={`care-check ${task.completed ? "done" : ""}`}
