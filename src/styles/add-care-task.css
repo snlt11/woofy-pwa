@@ -6,26 +6,33 @@
   display: grid;
   align-items: end;
 
-  background: rgba(36, 32, 30, .28);
+  padding: 0 10px max(10px, env(safe-area-inset-bottom));
+
+  background: rgba(36, 32, 30, .24);
 }
 
 .add-care-sheet {
-  width: min(100%, 430px);
-  max-height: 92dvh;
+  width: min(100%, 410px);
+  max-height: min(84dvh, 700px);
 
   margin: 0 auto;
-  padding:
-    18px
-    18px
-    calc(22px + env(safe-area-inset-bottom));
+  padding: 16px;
 
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
 
-  border-radius: 30px 30px 0 0;
+  border: 1px solid #ebe5e1;
+  border-radius: 26px;
 
   background: #fbf7f2;
-  box-shadow: 0 -18px 50px rgba(30, 26, 24, .16);
+  box-shadow: 0 18px 50px rgba(30, 26, 24, .16);
+}
+
+.add-care-sheet::-webkit-scrollbar {
+  display: none;
 }
 
 .add-care-header {
@@ -34,17 +41,17 @@
   justify-content: space-between;
   gap: 12px;
 
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .add-care-header span {
   display: block;
 
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 
   color: #6aa7d8;
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 750;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -55,23 +62,25 @@
 
   color: #292527;
 
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.08;
   letter-spacing: -.02em;
 }
 
 .add-care-header p {
-  margin: 6px 0 0;
+  margin: 5px 0 0;
 
   color: #938c88;
 
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .add-care-close {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
 
   display: grid;
   place-items: center;
@@ -85,24 +94,28 @@
 
 .add-care-form {
   display: grid;
-  gap: 13px;
+  gap: 10px;
 }
 
 .add-care-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 9px;
 }
 
 .add-care-field {
   display: grid;
-  gap: 7px;
+  gap: 6px;
+
+  min-width: 0;
+
+  scroll-margin-bottom: 140px;
 }
 
 .add-care-field > span {
   color: #6f6966;
 
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 650;
 }
 
@@ -113,7 +126,7 @@
   min-width: 0;
 
   border: 1px solid #e7e1dd;
-  border-radius: 15px;
+  border-radius: 14px;
   outline: none;
 
   background: #fffdfb;
@@ -125,22 +138,24 @@
 
 .add-care-field input,
 .add-care-field select {
-  height: 50px;
-  padding: 0 13px;
+  height: 46px;
+  padding: 0 12px;
 }
 
 .add-care-field textarea {
   resize: vertical;
-  min-height: 86px;
-  padding: 12px 13px;
-  line-height: 1.45;
+
+  min-height: 72px;
+  padding: 10px 12px;
+
+  line-height: 1.4;
 }
 
 .add-care-field input:focus,
 .add-care-field select:focus,
 .add-care-field textarea:focus {
   border-color: rgba(80, 158, 216, .58);
-  box-shadow: 0 0 0 4px rgba(105, 174, 222, .10);
+  box-shadow: 0 0 0 3px rgba(105, 174, 222, .09);
 }
 
 .add-care-time {
@@ -149,9 +164,12 @@
 
 .add-care-time > svg {
   position: absolute;
-  left: 12px;
+  left: 11px;
   top: 50%;
   z-index: 1;
+
+  width: 16px;
+  height: 16px;
 
   transform: translateY(-50%);
 
@@ -160,7 +178,7 @@
 }
 
 .add-care-time input {
-  padding-left: 39px;
+  padding-left: 35px;
 }
 
 .add-care-error {
@@ -168,22 +186,22 @@
 
   color: #9a4f4f;
 
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .add-care-actions {
   display: grid;
   grid-template-columns: .8fr 1.2fr;
-  gap: 10px;
+  gap: 9px;
 
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 .add-care-secondary,
 .add-care-primary {
-  min-height: 52px;
+  min-height: 48px;
 
-  border-radius: 17px;
+  border-radius: 15px;
 
   font: inherit;
   font-size: 14px;
@@ -203,7 +221,44 @@
   background: #68a3d2;
   color: #fff;
 
-  box-shadow: 0 8px 20px rgba(70, 143, 198, .16);
+  box-shadow: 0 7px 18px rgba(70, 143, 198, .14);
+}
+
+@media (max-width: 520px) {
+  .add-care-field input,
+  .add-care-field select,
+  .add-care-field textarea {
+    font-size: 16px;
+  }
+
+  .add-care-sheet {
+    max-height: 80dvh;
+  }
+}
+
+@media (max-width: 370px) {
+  .add-care-overlay {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .add-care-sheet {
+    padding: 14px;
+    border-radius: 24px;
+  }
+
+  .add-care-header h2 {
+    font-size: 22px;
+  }
+
+  .add-care-grid {
+    gap: 8px;
+  }
+
+  .add-care-field input,
+  .add-care-field select {
+    height: 44px;
+  }
 }
 
 @media (min-width: 600px) {
@@ -213,13 +268,7 @@
   }
 
   .add-care-sheet {
-    width: min(430px, 100%);
-    border-radius: 30px;
-  }
-}
-
-@media (max-width: 370px) {
-  .add-care-grid {
-    grid-template-columns: 1fr;
+    width: min(410px, 100%);
+    max-height: min(82dvh, 700px);
   }
 }
