@@ -207,3 +207,34 @@
     font-size: 21px;
   }
 }
+
+
+.buddy-details-button {
+  width: 100%;
+  min-height: 34px;
+
+  margin-top: 8px;
+  padding: 0 4px;
+
+  border: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+
+  background: transparent;
+  color: rgba(255, 255, 255, .82);
+
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.buddy-details-button svg {
+  flex: 0 0 auto;
+}
+
+.buddy-details-button:active {
+  opacity: .72;
+}
