@@ -600,26 +600,30 @@
   }
 }
 
-/* ---------- WOOFY custom navbar v2 ---------- */
+/* ---------- WOOFY custom navbar: soft flat UI ---------- */
 
 .app-shell .woofy-tabbar {
   left: 14px;
   right: 14px;
   bottom: max(12px, env(safe-area-inset-bottom));
+
   height: 82px;
   padding: 7px 9px;
+
   border-radius: 30px;
 
-  background: rgba(255, 255, 255, 0.62);
+  background: #fffdfb;
 
-  -webkit-backdrop-filter: blur(30px) saturate(170%);
-  backdrop-filter: blur(30px) saturate(170%);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 
-  border: 1px solid rgba(255, 255, 255, 0.88);
+  border: 1px solid #f0ebe7;
 
-  box-shadow:
-    0 14px 34px rgba(71, 88, 105, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 28px rgba(45, 35, 30, 0.08);
+}
+
+.app-shell .woofy-tabbar::before {
+  display: none;
 }
 
 .app-shell .woofy-tab {
@@ -634,18 +638,16 @@
 
   border-radius: 17px;
 
-  color: #8390a3;
+  color: #8792a4;
 
   background: transparent;
-  border: 1px solid transparent;
-
+  border: 0;
+  box-shadow: none;
   transform: none;
 
   transition:
-    color 180ms var(--ease-app),
-    background-color 180ms var(--ease-app),
-    border-color 180ms var(--ease-app),
-    box-shadow 180ms var(--ease-app);
+    color 160ms ease,
+    background-color 160ms ease;
 }
 
 .app-shell .woofy-tab-icon > svg {
@@ -656,18 +658,10 @@
 .app-shell .woofy-tab.is-active .woofy-tab-icon {
   color: #1689e6;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(234, 246, 255, 0.96),
-      rgba(221, 240, 255, 0.90)
-    );
+  background: #eaf5fd;
 
-  border-color: rgba(255, 255, 255, 0.92);
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    0 5px 14px rgba(54, 143, 214, 0.12);
+  border: 0;
+  box-shadow: none;
 }
 
 .app-shell .woofy-tab-label {
@@ -677,7 +671,7 @@
   line-height: 16px;
   font-weight: 600;
 
-  color: #8390a3;
+  color: #8792a4;
 }
 
 .app-shell .woofy-tab.is-active .woofy-tab-label {
@@ -686,7 +680,7 @@
 }
 
 .app-shell .woofy-tab:active .woofy-tab-icon {
-  transform: scale(0.96);
+  transform: none;
 }
 
 @media (max-width: 370px) {
