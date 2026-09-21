@@ -24,7 +24,7 @@ function normalizeSnapshot(input) {
   return {
     ...seed,
     ...input,
-    version: 1,
+    version: 2,
     onboarding: { ...seed.onboarding, ...onboarding },
     pet: { ...seed.pet, ...pet },
     home: {
