@@ -351,7 +351,6 @@
   min-width: 0;
 }
 
-/* Native inputs/selects must never force a grid column wider than its track. */
 .pet-field input,
 .pet-field select {
   min-width: 0;
@@ -362,10 +361,7 @@
   width: 100%;
 }
 
-/* Custom visible birthday control.
-   The native date input lives off-screen only to open the OS date picker. */
 .pet-date-picker {
-  position: relative;
   width: 100%;
   min-width: 0;
 }
@@ -402,6 +398,10 @@
     background-color 160ms ease;
 }
 
+.pet-date-button:hover {
+  background: #fbf9f7;
+}
+
 .pet-date-button:focus-visible {
   outline: none;
   border-color: rgba(80, 158, 216, .58);
@@ -423,31 +423,186 @@
   color: #7d8897;
 }
 
-/* Important: do not overlay the native input on the visible field.
-   Safari renders its own date text even when overlaid in some layouts. */
-.pet-date-native {
-  position: fixed !important;
-  left: -10000px !important;
-  top: 0 !important;
+/* Custom dialog avoids Safari's inconsistent programmatic native date picker. */
+.pet-date-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
 
-  width: 1px !important;
-  height: 1px !important;
-  min-width: 1px !important;
-  max-width: 1px !important;
+  display: grid;
+  place-items: center;
 
-  margin: 0 !important;
-  padding: 0 !important;
+  padding: 18px;
 
-  opacity: 0 !important;
-  pointer-events: none !important;
-
-  border: 0 !important;
-
-  appearance: none !important;
-  -webkit-appearance: none !important;
+  background: rgba(36, 32, 30, .28);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
-/* 16px on mobile prevents Safari focus-zoom for text/select controls. */
+.pet-date-dialog {
+  width: min(100%, 360px);
+
+  padding: 18px;
+
+  border: 1px solid #ebe5e1;
+  border-radius: 26px;
+
+  background: #fffdfb;
+  box-shadow: 0 24px 64px rgba(35, 30, 28, .18);
+}
+
+.pet-date-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 16px;
+}
+
+.pet-date-dialog-header span {
+  display: block;
+  margin-bottom: 3px;
+
+  color: #6aa7d8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pet-date-dialog-header h3 {
+  margin: 0;
+
+  color: #292527;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+
+.pet-date-dialog-close {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #f1ece8;
+  color: #5d5754;
+}
+
+.pet-date-dialog-preview {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 38px;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 16px;
+  padding: 10px;
+
+  border-radius: 17px;
+  background: #f4f8fb;
+}
+
+.pet-date-dialog-preview strong {
+  overflow: hidden;
+
+  color: #292527;
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.pet-date-dialog-preview button {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 11px;
+
+  background: #fff;
+  color: #4f6680;
+}
+
+.pet-date-dialog-preview button:disabled {
+  opacity: .35;
+}
+
+.pet-date-dialog-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .75fr .9fr;
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+.pet-date-dialog-field {
+  display: grid;
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.pet-date-dialog-field > span {
+  color: #756f6c;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.pet-date-dialog-field select {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+
+  padding: 0 28px 0 10px;
+
+  border: 1px solid #e5ded9;
+  border-radius: 14px;
+  outline: none;
+
+  background: #f8f5f2;
+  color: #292527;
+
+  font: inherit;
+  font-size: 14px;
+}
+
+.pet-date-dialog-actions {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 10px;
+}
+
+.pet-date-dialog-cancel,
+.pet-date-dialog-apply {
+  min-height: 48px;
+
+  border: 0;
+  border-radius: 15px;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pet-date-dialog-cancel {
+  border: 1px solid #e7e1dd;
+  background: #fff;
+  color: #5d5754;
+}
+
+.pet-date-dialog-apply {
+  background: #68a3d2;
+  color: #fff;
+}
+
 @media (max-width: 520px) {
   .pet-field input,
   .pet-field select,
@@ -477,9 +632,33 @@
   .pet-date-button > span {
     font-size: 15px;
   }
+
+  .pet-date-dialog-backdrop {
+    align-items: end;
+    padding:
+      12px
+      12px
+      calc(12px + env(safe-area-inset-bottom));
+  }
+
+  .pet-date-dialog {
+    width: 100%;
+    border-radius: 28px;
+  }
+
+  .pet-date-dialog-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pet-date-dialog-month {
+    grid-column: 1 / -1;
+  }
+
+  .pet-date-dialog-field select {
+    font-size: 16px;
+  }
 }
 
-/* Even on small iPhones keep the requested 2-column pairing. */
 @media (max-width: 370px) {
   .pet-about-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
