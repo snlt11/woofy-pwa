@@ -211,8 +211,14 @@ export function MedicineIcon({ className = "", title = "Medicine" }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M20.5 39.5 39.5 20.5a8 8 0 0 1 11.3 11.3L31.8 50.8a8 8 0 0 1-11.3-11.3Z" />
-        <path d="m27.5 32.5 11 11" />
+        <path d="M18.5 37.5 36.8 19.2a8.4 8.4 0 0 1 11.9 11.9L30.4 49.4a8.4 8.4 0 0 1-11.9-11.9Z" />
+        <path d="m27.3 28.7 8 8" />
+      </g>
+      <g fill="#2E8FE5">
+        <ellipse cx="40.8" cy="42.4" rx="2.1" ry="2.8" transform="rotate(-18 40.8 42.4)" />
+        <ellipse cx="45.1" cy="40.3" rx="2.1" ry="2.8" />
+        <ellipse cx="49.1" cy="42.5" rx="2.1" ry="2.8" transform="rotate(18 49.1 42.5)" />
+        <path d="M39.9 47.6c0-2.7 2.2-4.8 5.1-4.8s5.1 2.1 5.1 4.8c0 2.1-1.7 3.5-5.1 3.5s-5.1-1.4-5.1-3.5Z" />
       </g>
     </svg>
   );
@@ -337,21 +343,35 @@ export function SyringeIcon({ className = "", title = "Vaccination" }) {
       aria-label={title}
     >
       <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g transform="rotate(-45 32 32)">
+        <g
+          fill="none"
+          stroke="#2E8FE5"
+          strokeWidth="3.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M24 24h16v24a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6V24Z" />
+          <path d="M21 21h22" />
+          <path d="M28 16h8v5h-8Z" />
+          <path d="M32 54v6" />
+          <path d="M28 31h-4M28 37h-4M28 43h-4" />
+        </g>
+        <g fill="#2E8FE5">
+          <circle cx="29" cy="37.2" r="1.6" />
+          <circle cx="32" cy="35.8" r="1.6" />
+          <circle cx="35" cy="37.2" r="1.6" />
+          <path d="M28.6 41.1c0-1.9 1.5-3.3 3.4-3.3s3.4 1.4 3.4 3.3c0 1.5-1.1 2.5-3.4 2.5s-3.4-1-3.4-2.5Z" />
+        </g>
+      </g>
       <g
         fill="none"
         stroke="#2E8FE5"
-        strokeWidth="3.4"
+        strokeWidth="3.3"
         strokeLinecap="round"
-        strokeLinejoin="round"
       >
-        <path d="m22 42 19-19" />
-        <path d="m18 38 8 8" />
-        <path d="m36 18 10 10" />
-        <path d="m41 13 10 10" />
-        <path d="m14 46 4-4" />
-        <path d="m49 15 3-3" />
-        <path d="m27.5 30.5 6 6" />
-        <path d="m31.5 26.5 6 6" />
+        <path d="M45.5 42.5 50 47" />
+        <path d="M41.5 46.5 46 51" />
       </g>
     </svg>
   );
