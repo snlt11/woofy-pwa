@@ -123,7 +123,7 @@ export default function OnboardingPage() {
                 />
               </label>
 
-              <label className="pet-field pet-date-field">
+              <div className="pet-field pet-date-field">
                 <span>Birthday</span>
 
                 <BirthdayPicker
@@ -138,7 +138,7 @@ export default function OnboardingPage() {
                     if (error) setError("");
                   }}
                 />
-              </label>
+              </div>
 
               <label className="pet-field">
                 <span>Gender</span>
