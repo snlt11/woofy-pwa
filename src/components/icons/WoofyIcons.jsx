@@ -613,13 +613,20 @@ export function PlannerNavIcon({ className = "", title = "Planner" }) {
       <g
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.4"
+        strokeWidth="2.7"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect x="6" y="8" width="20" height="18" rx="3.5" />
-        <path d="M6 13h20M11 5.5v5M21 5.5v5" />
-        <path d="M11 17h2M16 17h2M21 17h2M11 21h2M16 21h2M21 21h2" />
+        <rect x="5.8" y="7.8" width="20.4" height="19" rx="3.7" />
+        <path d="M5.8 13.2h20.4M11 5.2v5.1M21 5.2v5.1" />
+      </g>
+      <g fill="currentColor">
+        <circle cx="11" cy="17.2" r="1.25" />
+        <circle cx="16" cy="17.2" r="1.25" />
+        <circle cx="21" cy="17.2" r="1.25" />
+        <circle cx="11" cy="22.1" r="1.25" />
+        <circle cx="16" cy="22.1" r="1.25" />
+        <circle cx="21" cy="22.1" r="1.25" />
       </g>
     </svg>
   );
