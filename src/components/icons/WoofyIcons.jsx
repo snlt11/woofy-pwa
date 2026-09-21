@@ -593,22 +593,16 @@ export function StepsIcon({ className = "", title = "Steps" }) {
 export function HomeNavIcon({ className = "", title = "Home" }) {
   return (
     <svg className={className} viewBox="0 0 32 32" role="img" aria-label={title}>
-      <path
-        d="M6.5 14.5 16 6l9.5 8.5v10a2 2 0 0 1-2 2H8.5a2 2 0 0 1-2-2v-10Z"
+      <g
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.4"
+        strokeWidth="2.7"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-      <path
-        d="M12.5 26v-8h7v8"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      >
+        <path d="M5.8 14.6 16 5.8l10.2 8.8v10.1a2.2 2.2 0 0 1-2.2 2.2H8a2.2 2.2 0 0 1-2.2-2.2V14.6Z" />
+        <path d="M12.2 26.9v-8.4h7.6v8.4" />
+      </g>
     </svg>
   );
 }
