@@ -15,41 +15,76 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>
 );
 
-
 function registerWoofyServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
 
   let registration;
+  let swUrl;
+  let reloading = false;
 
-  const checkForUpdate = async () => {
-    if (!registration || !navigator.onLine) return;
-
-    try {
-      await registration.update();
-    } catch {
-      // Keep the current cached version if the update check cannot reach the network.
-    }
-  };
-
-  registerSW({
+  const updateSW = registerSW({
     immediate: true,
 
-    onRegisteredSW(_swUrl, currentRegistration) {
+    onRegisteredSW(currentSwUrl, currentRegistration) {
+      swUrl = currentSwUrl;
       registration = currentRegistration;
 
       void checkForUpdate();
+    },
 
-      const handleVisibilityChange = () => {
-        if (document.visibilityState === "visible") {
-          void checkForUpdate();
-        }
-      };
+    onNeedRefresh() {
+      void updateSW(true);
+    },
 
-      window.addEventListener("online", checkForUpdate);
-      window.addEventListener("focus", checkForUpdate);
-      document.addEventListener("visibilitychange", handleVisibilityChange);
+    onRegisterError() {
+      // Keep the app usable if service-worker registration fails.
     },
   });
+
+  async function checkForUpdate() {
+    if (!registration || !swUrl || !navigator.onLine) return;
+
+    if (registration.installing) return;
+
+    try {
+      const response = await fetch(swUrl, {
+        cache: "no-store",
+        headers: {
+          cache: "no-store",
+          "cache-control": "no-cache",
+        },
+      });
+
+      if (!response.ok) return;
+
+      await registration.update();
+
+      if (registration.waiting) {
+        await updateSW(true);
+      }
+    } catch {
+      // Keep the current cached version when the update check cannot reach the network.
+    }
+  }
+
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (reloading) return;
+
+    reloading = true;
+    window.location.reload();
+  });
+
+  const handleVisibilityChange = () => {
+    if (document.visibilityState === "visible") {
+      void checkForUpdate();
+    }
+  };
+
+  window.addEventListener("online", checkForUpdate);
+  window.addEventListener("focus", checkForUpdate);
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+
+  window.__woofyCheckForUpdate = checkForUpdate;
 }
 
 registerWoofyServiceWorker();

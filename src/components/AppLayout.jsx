@@ -19,26 +19,9 @@ export default function AppLayout() {
   }, [pathname]);
 
   useEffect(() => {
-    if (!("serviceWorker" in navigator) || !navigator.onLine) return;
-
-    let cancelled = false;
-
-    navigator.serviceWorker
-      .getRegistration()
-      .then((registration) => {
-        if (!cancelled && registration) {
-          return registration.update();
-        }
-
-        return undefined;
-      })
-      .catch(() => {
-        // Keep using the current cached version when an update check fails.
-      });
-
-    return () => {
-      cancelled = true;
-    };
+    if (typeof window.__woofyCheckForUpdate === "function") {
+      void window.__woofyCheckForUpdate();
+    }
   }, [pathname]);
 
   if (!onboarding.profileCompleted) {
