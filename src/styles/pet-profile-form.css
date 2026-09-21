@@ -334,71 +334,46 @@
   }
 }
 
-/* ---------- Mobile field compatibility ---------- */
+/* ---------- Stable paired fields + birthday picker ---------- */
 
-/* Keep native date/select controls from overflowing narrow iPhone layouts. */
+/* The About step always keeps Birthday/Gender and Weight/Activity paired. */
+.pet-about-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  column-gap: 10px;
+  row-gap: 12px;
+}
+
+.pet-about-grid .pet-field-full {
+  grid-column: 1 / -1 !important;
+}
+
+.pet-about-grid .pet-field {
+  min-width: 0;
+}
+
+/* Native inputs/selects must never force a grid column wider than its track. */
 .pet-field input,
 .pet-field select {
   min-width: 0;
   max-width: 100%;
 }
 
-.pet-field input[type="date"] {
-  display: block;
-  width: 100%;
-  min-width: 0;
-}
-
-.pet-field input[type="date"]::-webkit-date-and-time-value {
-  min-width: 0;
-  text-align: left;
-}
-
 .pet-field select {
   width: 100%;
 }
 
-/* 16px prevents Safari from zooming the page when a field receives focus. */
-@media (max-width: 520px) {
-  .pet-field input,
-  .pet-field select {
-    font-size: 16px;
-  }
-}
-
-/* On narrower phones, the native date and select controls need full rows.
-   This avoids Birthday/Gender or Weight/Activity squeezing into each other. */
-@media (max-width: 410px) {
-  .pet-form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pet-field-full {
-    grid-column: auto;
-  }
-
-  .pet-form-section {
-    padding: 16px;
-  }
-
-  .pet-form-section-heading > div {
-    display: grid;
-    gap: 4px;
-  }
-
-  .pet-form-section-heading h2 {
-    font-size: 21px;
-  }
-}
-
-/* ---------- Birthday + paired mobile fields ---------- */
-
-.pet-date-control {
+/* Custom visible birthday control.
+   The native date input lives off-screen only to open the OS date picker. */
+.pet-date-picker {
   position: relative;
-
   width: 100%;
   min-width: 0;
+}
+
+.pet-date-button {
+  width: 100%;
   height: 48px;
+  min-width: 0;
 
   display: flex;
   align-items: center;
@@ -414,94 +389,123 @@
 
   background: #f8f5f2;
   color: #292527;
+
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
 }
 
-.pet-date-control:focus-within {
+.pet-date-button:focus-visible {
+  outline: none;
   border-color: rgba(80, 158, 216, .58);
   background: #fff;
   box-shadow: 0 0 0 4px rgba(105, 174, 222, .12);
 }
 
-.pet-date-value {
+.pet-date-button > span {
   min-width: 0;
-
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
-  font-size: 14px;
-  line-height: 1;
 }
 
-.pet-date-control > svg {
-  flex: 0 0 auto;
+.pet-date-button > svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
   color: #7d8897;
 }
 
+/* Important: do not overlay the native input on the visible field.
+   Safari renders its own date text even when overlaid in some layouts. */
 .pet-date-native {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+  position: fixed !important;
+  left: -10000px !important;
+  top: 0 !important;
 
-  width: 100% !important;
-  height: 100% !important;
-  min-width: 0 !important;
-  max-width: none !important;
+  width: 1px !important;
+  height: 1px !important;
+  min-width: 1px !important;
+  max-width: 1px !important;
 
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 
-  opacity: 0;
+  opacity: 0 !important;
+  pointer-events: none !important;
 
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
+  border: 0 !important;
+
+  appearance: none !important;
+  -webkit-appearance: none !important;
 }
 
-/* Keep Birthday/Gender and Weight/Activity side by side on phones.
-   The custom Birthday control avoids Safari's native date min-width bug. */
+/* 16px on mobile prevents Safari focus-zoom for text/select controls. */
 @media (max-width: 520px) {
-  .pet-form-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .pet-field input,
+  .pet-field select,
+  .pet-date-button {
+    font-size: 16px;
+  }
+
+  .pet-about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     column-gap: 10px;
-    row-gap: 12px;
   }
 
-  .pet-field-full {
-    grid-column: 1 / -1;
-  }
-
-  .pet-date-value {
-    font-size: 13px;
-  }
-
-  .pet-date-control > svg {
-    width: 16px;
-    height: 16px;
+  .pet-about-grid .pet-field-full {
+    grid-column: 1 / -1 !important;
   }
 
   .pet-field select {
     padding-left: 11px;
     padding-right: 28px;
   }
-}
 
-@media (max-width: 360px) {
-  .pet-form-section {
-    padding: 14px;
+  .pet-date-button {
+    padding-left: 11px;
+    padding-right: 10px;
   }
 
-  .pet-form-grid {
+  .pet-date-button > span {
+    font-size: 15px;
+  }
+}
+
+/* Even on small iPhones keep the requested 2-column pairing. */
+@media (max-width: 370px) {
+  .pet-about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     column-gap: 8px;
   }
 
-  .pet-field > span {
+  .pet-about-grid .pet-field-full {
+    grid-column: 1 / -1 !important;
+  }
+
+  .pet-about-grid .pet-field > span {
     font-size: 11px;
   }
 
-  .pet-date-value,
-  .pet-field select,
-  .pet-field input {
-    font-size: 15px;
+  .pet-date-button {
+    padding-left: 9px;
+    padding-right: 8px;
+  }
+
+  .pet-date-button > span {
+    font-size: 14px;
+  }
+
+  .pet-date-button > svg {
+    width: 15px;
+    height: 15px;
+    flex-basis: 15px;
   }
 }
