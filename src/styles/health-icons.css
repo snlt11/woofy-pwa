@@ -1,0 +1,75 @@
+/* Health page custom WOOFY icons only.
+   Layout, spacing, typography and card styling remain unchanged. */
+
+.health-page .page-header .round-button .woofy-control-icon {
+  width: 23px;
+  height: 23px;
+}
+
+.health-page .health-stat-icon {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.health-page .health-stat-icon,
+.health-page .health-stat-icon .woofy-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.health-page .vet-date-icon {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.health-page .vet-date-icon,
+.health-page .vet-date-icon .woofy-icon {
+  width: 54px;
+  height: 54px;
+}
+
+.health-page .health-mini-icon {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.health-page .health-mini-icon,
+.health-page .health-mini-icon .woofy-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.health-page .activity-icon {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.health-page .activity-icon,
+.health-page .activity-icon .woofy-icon {
+  width: 52px;
+  height: 52px;
+}
+
+@media (max-width: 370px) {
+  .health-page .health-stat-icon,
+  .health-page .health-stat-icon .woofy-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .health-page .health-mini-icon,
+  .health-page .health-mini-icon .woofy-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .health-page .activity-icon,
+  .health-page .activity-icon .woofy-icon {
+    width: 48px;
+    height: 48px;
+  }
+}

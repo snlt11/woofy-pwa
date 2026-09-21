@@ -305,3 +305,77 @@ export function NextIcon({ className = "", title = "Next" }) {
     </svg>
   );
 }
+
+
+export function SleepIcon({ className = "", title = "Sleep" }) {
+  return (
+    <svg
+      className={`woofy-icon ${className}`}
+      viewBox="0 0 64 64"
+      role="img"
+      aria-label={title}
+    >
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <path
+        d="M39.5 18.5c-8.4 1.2-14.8 8.4-14.8 17.1 0 6.2 3.3 11.7 8.3 14.7-9.1-.8-16.3-8.4-16.3-17.7 0-9.8 8-17.8 17.8-17.8 1.8 0 3.5.3 5 .7Z"
+        fill="none"
+        stroke="#2E8FE5"
+        strokeWidth="3.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function SyringeIcon({ className = "", title = "Vaccination" }) {
+  return (
+    <svg
+      className={`woofy-icon ${className}`}
+      viewBox="0 0 64 64"
+      role="img"
+      aria-label={title}
+    >
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g
+        fill="none"
+        stroke="#2E8FE5"
+        strokeWidth="3.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m22 42 19-19" />
+        <path d="m18 38 8 8" />
+        <path d="m36 18 10 10" />
+        <path d="m41 13 10 10" />
+        <path d="m14 46 4-4" />
+        <path d="m49 15 3-3" />
+        <path d="m27.5 30.5 6 6" />
+        <path d="m31.5 26.5 6 6" />
+      </g>
+    </svg>
+  );
+}
+
+export function ActivityHeartIcon({ className = "", title = "Daily activity" }) {
+  return (
+    <svg
+      className={`woofy-icon ${className}`}
+      viewBox="0 0 64 64"
+      role="img"
+      aria-label={title}
+    >
+      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <g
+        fill="none"
+        stroke="#2E8FE5"
+        strokeWidth="3.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M32 49S14.5 39 14.5 26.5A9.5 9.5 0 0 1 32 21a9.5 9.5 0 0 1 17.5 5.5C49.5 39 32 49 32 49Z" />
+        <path d="M21 32h6l3-6 4 12 3-6h6" />
+      </g>
+    </svg>
+  );
+}

@@ -1,18 +1,23 @@
 import {
-  CalendarDays,
   Check,
   Clock,
-  Footprints,
-  HeartPulse,
   MapPin,
-  Moon,
-  Pill,
-  Scale,
-  Syringe,
 } from "lucide-react";
 
+import {
+  ActivityHeartIcon,
+  MedicineIcon,
+  PlannerCalendarIcon,
+  SleepIcon,
+  SyringeIcon,
+  VetCalendarIcon,
+  WalkIcon,
+  WeightIcon,
+} from "../../components/icons/WoofyIcons";
 import { ASSETS } from "../../config/assets";
 import { useWoofy } from "../../state/useWoofy";
+import "../../styles/woofy-icons.css";
+import "../../styles/health-icons.css";
 
 export default function HealthPage() {
   const {
@@ -45,7 +50,7 @@ export default function HealthPage() {
         </div>
 
         <button className="round-button" type="button" aria-label="Health calendar">
-          <CalendarDays size={23} />
+          <PlannerCalendarIcon />
         </button>
       </header>
 
@@ -75,17 +80,17 @@ export default function HealthPage() {
 
         <div className="health-stat-grid">
           <HealthStat
-            icon={<Scale size={24} />}
+            icon={<WeightIcon />}
             value={`${pet.weightKg} KG`}
             label="Weight"
           />
           <HealthStat
-            icon={<Footprints size={24} />}
+            icon={<WalkIcon title="Steps" />}
             value={health.steps.toLocaleString()}
             label="Steps"
           />
           <HealthStat
-            icon={<Moon size={24} />}
+            icon={<SleepIcon />}
             value={health.sleepLabel}
             label="Sleep"
           />
@@ -141,7 +146,7 @@ export default function HealthPage() {
 
         <div className="vet-card">
           <div className="vet-date-icon">
-            <CalendarDays size={28} />
+            <VetCalendarIcon />
           </div>
 
           <div className="vet-main">
@@ -169,7 +174,7 @@ export default function HealthPage() {
 
       <section className="health-two-column">
         <HealthMiniCard
-          icon={<Syringe size={24} />}
+          icon={<SyringeIcon />}
           title="Vaccinations"
           status={health.vaccination.status}
           detail={health.vaccination.detail}
@@ -177,7 +182,7 @@ export default function HealthPage() {
         />
 
         <HealthMiniCard
-          icon={<Pill size={24} />}
+          icon={<MedicineIcon />}
           title="Medication"
           status={health.medication.title}
           detail={health.medication.detail}
@@ -187,7 +192,7 @@ export default function HealthPage() {
       <section className="health-section">
         <div className="activity-card">
           <div className="activity-icon">
-            <HeartPulse size={28} />
+            <ActivityHeartIcon />
           </div>
 
           <div className="activity-content">
