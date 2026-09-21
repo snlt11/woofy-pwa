@@ -30,8 +30,36 @@ export function WoofyProvider({ children }) {
           onboarding: {
             ...current.onboarding,
             completed: true,
+            profileCompleted: true,
           },
         }));
+      },
+
+      savePetProfile(patch) {
+        commit((current) => {
+          const pet = {
+            ...current.pet,
+            ...patch,
+          };
+
+          return {
+            ...current,
+            pet,
+            health: {
+              ...current.health,
+              weightTrend: {
+                ...current.health.weightTrend,
+                valueKg: pet.weightKg,
+              },
+              nextVetVisit: {
+                ...current.health.nextVetVisit,
+                clinic:
+                  pet.primaryVet ||
+                  current.health.nextVetVisit.clinic,
+              },
+            },
+          };
+        });
       },
 
       setMood(moodId) {
@@ -83,13 +111,30 @@ export function WoofyProvider({ children }) {
       },
 
       updatePet(patch) {
-        commit((current) => ({
-          ...current,
-          pet: {
+        commit((current) => {
+          const pet = {
             ...current.pet,
             ...patch,
-          },
-        }));
+          };
+
+          return {
+            ...current,
+            pet,
+            health: {
+              ...current.health,
+              weightTrend: {
+                ...current.health.weightTrend,
+                valueKg: pet.weightKg,
+              },
+              nextVetVisit: {
+                ...current.health.nextVetVisit,
+                clinic:
+                  pet.primaryVet ||
+                  current.health.nextVetVisit.clinic,
+              },
+            },
+          };
+        });
       },
 
       resetApp() {
