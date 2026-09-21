@@ -102,7 +102,7 @@ export default function HealthPage() {
 
         <div className="weight-card">
           <div className="weight-summary">
-            <strong>{health.weightTrend.valueKg} KG</strong>
+            <strong>{pet.weightKg} KG</strong>
             <span>{health.weightTrend.summary}</span>
           </div>
 
@@ -162,7 +162,7 @@ export default function HealthPage() {
 
             <div>
               <MapPin size={16} />
-              <span>{health.nextVetVisit.clinic}</span>
+              <span>{pet.primaryVet || health.nextVetVisit.clinic}</span>
             </div>
           </div>
 
