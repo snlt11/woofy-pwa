@@ -20,14 +20,15 @@ export const DEFAULT_PLANNER_ACTIVITIES = [
 
 export function createInitialAppState(now = new Date()) {
   return {
-    version: 1,
-    onboarding: { completed: false },
+    version: 2,
+    onboarding: { completed: false, profileCompleted: false },
     pet: {
       id: "buddy",
       name: "Buddy",
       breed: "Golden Puppy",
       ageLabel: "2 Years",
       ageDescription: "2 years old",
+      birthdayISO: "2024-03-24",
       birthday: "March 24, 2024",
       gender: "Male",
       favoriteFood: "Chicken & rice",
