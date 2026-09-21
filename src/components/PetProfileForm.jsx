@@ -1,9 +1,8 @@
-import { CalendarDays } from "lucide-react";
-
 import { useState } from "react";
 
+import BirthdayPicker from "./BirthdayPicker";
+
 import {
-  formatBirthdayShort,
   formValuesToPetPatch,
   petToFormValues,
 } from "../lib/pet-profile";
@@ -59,7 +58,7 @@ export default function PetProfileForm({
           <p>Basic details used across WOOFY.</p>
         </div>
 
-        <div className="pet-form-grid">
+        <div className="pet-form-grid pet-about-grid">
           <label className="pet-field pet-field-full">
             <span>Pet name</span>
             <input
@@ -87,24 +86,18 @@ export default function PetProfileForm({
           <label className="pet-field pet-date-field">
             <span>Birthday</span>
 
-            <div className="pet-date-control">
-              <span className="pet-date-value">
-                {formatBirthdayShort(values.birthdayISO)}
-              </span>
-
-              <CalendarDays size={18} aria-hidden="true" />
-
-              <input
-                className="pet-date-native"
-                type="date"
-                name="birthdayISO"
-                value={values.birthdayISO}
-                onChange={updateField}
-                max={new Date().toISOString().slice(0, 10)}
-                aria-label="Birthday"
-                required
-              />
-            </div>
+            <BirthdayPicker
+              id="profile-birthday"
+              value={values.birthdayISO}
+              max={new Date().toISOString().slice(0, 10)}
+              onChange={(birthdayISO) => {
+                setValues((current) => ({
+                  ...current,
+                  birthdayISO,
+                }));
+                if (error) setError("");
+              }}
+            />
           </label>
 
           <label className="pet-field">
