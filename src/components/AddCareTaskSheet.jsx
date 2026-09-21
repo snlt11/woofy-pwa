@@ -90,7 +90,6 @@ export default function AddCareTaskSheet({ petName, onClose, onSave }) {
                 if (error) setError("");
               }}
               placeholder="Evening walk"
-              autoFocus
             />
           </label>
 
