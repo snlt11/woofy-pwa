@@ -5,9 +5,36 @@ function toISODate(date) {
 }
 
 export const DEFAULT_CARE_TASKS = [
-  { id: "morning-meal", title: "Morning meal", time: "8:00 AM", type: "meal", completed: true },
-  { id: "afternoon-walk", title: "Afternoon walk", time: "2:00 PM", type: "walk", completed: false },
-  { id: "evening-meal", title: "Evening meal", time: "6:00 PM", type: "meal", completed: false },
+  {
+    id: "morning-meal",
+    title: "Morning meal",
+    time: "8:00 AM",
+    type: "meal",
+    detail: "Breakfast • 1 cup",
+    description: "Start the day with the usual meal and fresh water.",
+    note: "Keep the feeding time consistent with Buddy's daily routine.",
+    completed: true,
+  },
+  {
+    id: "afternoon-walk",
+    title: "Afternoon walk",
+    time: "2:00 PM",
+    type: "walk",
+    detail: "30 min walk",
+    description: "A comfortable walk for movement, sniffing, and a little outdoor enrichment.",
+    note: "Bring water when needed and keep the pace comfortable.",
+    completed: false,
+  },
+  {
+    id: "evening-meal",
+    title: "Evening meal",
+    time: "6:00 PM",
+    type: "meal",
+    detail: "Dinner • 1 cup",
+    description: "Finish the day with the usual evening meal and fresh water.",
+    note: "Use the same portion plan unless Buddy's care plan changes.",
+    completed: false,
+  },
 ];
 
 export const DEFAULT_PLANNER_ACTIVITIES = [
