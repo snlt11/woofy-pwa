@@ -203,22 +203,38 @@ export function MedicineIcon({ className = "", title = "Medicine" }) {
       role="img"
       aria-label={title}
     >
-      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <defs>
+        <linearGradient id="woofyMedicationTile" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#F5FBFF" />
+          <stop offset="100%" stopColor="#EAF6FF" />
+        </linearGradient>
+      </defs>
+
+      <rect
+        x="2"
+        y="2"
+        width="60"
+        height="60"
+        rx="16"
+        fill="url(#woofyMedicationTile)"
+      />
+
       <g
         fill="none"
-        stroke="#2E8FE5"
-        strokeWidth="3.6"
+        stroke="#278BEA"
+        strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M18.5 37.5 36.8 19.2a8.4 8.4 0 0 1 11.9 11.9L30.4 49.4a8.4 8.4 0 0 1-11.9-11.9Z" />
-        <path d="m27.3 28.7 8 8" />
+        <path d="M14.5 38.5 35.8 17.2a10 10 0 0 1 14.1 14.1L28.6 52.6a10 10 0 0 1-14.1-14.1Z" />
+        <path d="m25.2 27.8 11 11" />
       </g>
-      <g fill="#2E8FE5">
-        <ellipse cx="40.8" cy="42.4" rx="2.1" ry="2.8" transform="rotate(-18 40.8 42.4)" />
-        <ellipse cx="45.1" cy="40.3" rx="2.1" ry="2.8" />
-        <ellipse cx="49.1" cy="42.5" rx="2.1" ry="2.8" transform="rotate(18 49.1 42.5)" />
-        <path d="M39.9 47.6c0-2.7 2.2-4.8 5.1-4.8s5.1 2.1 5.1 4.8c0 2.1-1.7 3.5-5.1 3.5s-5.1-1.4-5.1-3.5Z" />
+
+      <g fill="#278BEA">
+        <ellipse cx="39.5" cy="44.1" rx="2.55" ry="3.45" transform="rotate(-17 39.5 44.1)" />
+        <ellipse cx="45.2" cy="41.7" rx="2.65" ry="3.6" />
+        <ellipse cx="50.6" cy="44.5" rx="2.55" ry="3.45" transform="rotate(17 50.6 44.5)" />
+        <path d="M38.4 51c0-3.5 2.9-6.2 6.8-6.2S52 47.5 52 51c0 2.8-2.2 4.5-6.8 4.5S38.4 53.8 38.4 51Z" />
       </g>
     </svg>
   );
@@ -342,36 +358,53 @@ export function SyringeIcon({ className = "", title = "Vaccination" }) {
       role="img"
       aria-label={title}
     >
-      <rect x="2" y="2" width="60" height="60" rx="16" fill="#EEF7FD" />
+      <defs>
+        <linearGradient id="woofyVaccineTile" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#F5FBFF" />
+          <stop offset="100%" stopColor="#EAF6FF" />
+        </linearGradient>
+      </defs>
+
+      <rect
+        x="2"
+        y="2"
+        width="60"
+        height="60"
+        rx="16"
+        fill="url(#woofyVaccineTile)"
+      />
+
       <g transform="rotate(-45 32 32)">
         <g
           fill="none"
-          stroke="#2E8FE5"
-          strokeWidth="3.6"
+          stroke="#278BEA"
+          strokeWidth="5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M24 24h16v24a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6V24Z" />
-          <path d="M21 21h22" />
-          <path d="M28 16h8v5h-8Z" />
-          <path d="M32 54v6" />
-          <path d="M28 31h-4M28 37h-4M28 43h-4" />
+          <path d="M22.5 22.5h19v26a7.8 7.8 0 0 1-7.8 7.8h-3.4a7.8 7.8 0 0 1-7.8-7.8v-26Z" />
+          <path d="M18.5 20h27" />
+          <path d="M27.5 13.5h9V20h-9Z" />
+          <path d="M32 56.3V62" />
+          <path d="M22.5 33h5M22.5 40h5M22.5 47h5" />
         </g>
-        <g fill="#2E8FE5">
-          <circle cx="29" cy="37.2" r="1.6" />
-          <circle cx="32" cy="35.8" r="1.6" />
-          <circle cx="35" cy="37.2" r="1.6" />
-          <path d="M28.6 41.1c0-1.9 1.5-3.3 3.4-3.3s3.4 1.4 3.4 3.3c0 1.5-1.1 2.5-3.4 2.5s-3.4-1-3.4-2.5Z" />
+
+        <g fill="#278BEA">
+          <ellipse cx="29" cy="37.3" rx="2.15" ry="2.8" transform="rotate(-15 29 37.3)" />
+          <ellipse cx="32.4" cy="35.8" rx="2.2" ry="3" />
+          <ellipse cx="36" cy="37.4" rx="2.15" ry="2.8" transform="rotate(15 36 37.4)" />
+          <path d="M28.6 42c0-2.5 1.7-4.3 4.1-4.3s4.1 1.8 4.1 4.3c0 2-1.4 3.2-4.1 3.2s-4.1-1.2-4.1-3.2Z" />
         </g>
       </g>
+
       <g
         fill="none"
-        stroke="#2E8FE5"
-        strokeWidth="3.3"
+        stroke="#278BEA"
+        strokeWidth="4.6"
         strokeLinecap="round"
       >
-        <path d="M45.5 42.5 50 47" />
-        <path d="M41.5 46.5 46 51" />
+        <path d="M47 43.8 53 46" />
+        <path d="M43.1 48.4 47.2 53.6" />
       </g>
     </svg>
   );
