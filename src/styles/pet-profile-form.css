@@ -333,3 +333,60 @@
     height: 46px;
   }
 }
+
+/* ---------- Mobile field compatibility ---------- */
+
+/* Keep native date/select controls from overflowing narrow iPhone layouts. */
+.pet-field input,
+.pet-field select {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.pet-field input[type="date"] {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.pet-field input[type="date"]::-webkit-date-and-time-value {
+  min-width: 0;
+  text-align: left;
+}
+
+.pet-field select {
+  width: 100%;
+}
+
+/* 16px prevents Safari from zooming the page when a field receives focus. */
+@media (max-width: 520px) {
+  .pet-field input,
+  .pet-field select {
+    font-size: 16px;
+  }
+}
+
+/* On narrower phones, the native date and select controls need full rows.
+   This avoids Birthday/Gender or Weight/Activity squeezing into each other. */
+@media (max-width: 410px) {
+  .pet-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pet-field-full {
+    grid-column: auto;
+  }
+
+  .pet-form-section {
+    padding: 16px;
+  }
+
+  .pet-form-section-heading > div {
+    display: grid;
+    gap: 4px;
+  }
+
+  .pet-form-section-heading h2 {
+    font-size: 21px;
+  }
+}
