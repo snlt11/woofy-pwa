@@ -83,7 +83,7 @@ export default function PetProfileForm({
             />
           </label>
 
-          <label className="pet-field pet-date-field">
+          <div className="pet-field pet-date-field">
             <span>Birthday</span>
 
             <BirthdayPicker
@@ -98,7 +98,7 @@ export default function PetProfileForm({
                 if (error) setError("");
               }}
             />
-          </label>
+              </div>
 
           <label className="pet-field">
             <span>Gender</span>
