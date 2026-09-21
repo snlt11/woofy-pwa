@@ -635,13 +635,19 @@ export function HealthNavIcon({ className = "", title = "Health" }) {
   return (
     <svg className={className} viewBox="0 0 32 32" role="img" aria-label={title}>
       <path
-        d="M16 26S6.5 20.4 6.5 13.6A5.6 5.6 0 0 1 16 9.5a5.6 5.6 0 0 1 9.5 4.1C25.5 20.4 16 26 16 26Z"
+        d="M16 27S5.9 21 5.9 13.8A5.9 5.9 0 0 1 16 9.5a5.9 5.9 0 0 1 10.1 4.3C26.1 21 16 27 16 27Z"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.4"
+        strokeWidth="2.7"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+      <g fill="currentColor">
+        <ellipse cx="12.7" cy="15.5" rx="1.3" ry="1.7" />
+        <ellipse cx="16" cy="14.4" rx="1.35" ry="1.8" />
+        <ellipse cx="19.3" cy="15.5" rx="1.3" ry="1.7" />
+        <path d="M12.4 20c0-2.2 1.6-3.8 3.6-3.8s3.6 1.6 3.6 3.8c0 1.7-1.2 2.7-3.6 2.7s-3.6-1-3.6-2.7Z" />
+      </g>
     </svg>
   );
 }
