@@ -86,6 +86,27 @@ export function WoofyProvider({ children }) {
         }));
       },
 
+      addCareTask(task) {
+        commit((current) => ({
+          ...current,
+          home: {
+            ...current.home,
+            careTasks: [
+              ...current.home.careTasks,
+              {
+                ...task,
+                id:
+                  task.id ||
+                  (typeof crypto !== "undefined" && crypto.randomUUID
+                    ? crypto.randomUUID()
+                    : `care-${Date.now()}`),
+                completed: false,
+              },
+            ],
+          },
+        }));
+      },
+
       setPlannerDate(selectedDate) {
         commit((current) => ({
           ...current,
