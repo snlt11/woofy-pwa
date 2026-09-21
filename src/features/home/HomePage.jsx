@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Bell,
   ChevronRight,
@@ -7,6 +8,7 @@ import {
   Smile,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import AddCareTaskSheet from "../../components/AddCareTaskSheet";
 import {
   AddIcon,
   CompleteIcon,
@@ -21,6 +23,7 @@ import { ROUTES } from "../../config/routes";
 import { useWoofy } from "../../state/useWoofy";
 import "../../styles/woofy-icons.css";
 import "../../styles/home-scale.css";
+import "../../styles/add-care-task.css";
 
 const moods = [
   { id: "happy", label: "Happy", icon: Smile },
@@ -31,6 +34,7 @@ const moods = [
 
 export default function HomePage() {
   const navigate = useNavigate();
+  const [addingCare, setAddingCare] = useState(false);
 
   const {
     state: { pet, home, health },
@@ -98,7 +102,12 @@ export default function HomePage() {
         <div className="section-header">
           <h2>Today's care</h2>
 
-          <button className="add-button" type="button" aria-label="Add care task">
+          <button
+            className="add-button"
+            type="button"
+            aria-label="Add care task"
+            onClick={() => setAddingCare(true)}
+          >
             <AddIcon />
           </button>
         </div>
@@ -131,6 +140,14 @@ export default function HomePage() {
           />
         </div>
       </section>
+
+      {addingCare && (
+        <AddCareTaskSheet
+          petName={pet.name}
+          onClose={() => setAddingCare(false)}
+          onSave={(task) => actions.addCareTask(task)}
+        />
+      )}
     </main>
   );
 }
