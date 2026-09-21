@@ -30,6 +30,20 @@ export function formatBirthday(birthdayISO) {
   });
 }
 
+export function formatBirthdayShort(birthdayISO) {
+  if (!birthdayISO) return "Select date";
+
+  const date = new Date(`${birthdayISO}T00:00:00`);
+
+  if (Number.isNaN(date.getTime())) return "Select date";
+
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
 export function deriveAge(birthdayISO, now = new Date()) {
   if (!birthdayISO) {
     return {
