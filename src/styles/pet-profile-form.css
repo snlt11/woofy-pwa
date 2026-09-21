@@ -134,13 +134,26 @@
 
 .onboarding-profile {
   width: min(100%, 440px);
-  min-height: 100dvh;
+  height: 100dvh;
+  height: 100svh;
   margin: 0 auto;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+
   padding:
-    calc(28px + env(safe-area-inset-top))
+    calc(24px + env(safe-area-inset-top))
     18px
-    calc(30px + env(safe-area-inset-bottom));
+    calc(34px + env(safe-area-inset-bottom));
+
   background: #fbf7f2;
+}
+
+.onboarding-profile::-webkit-scrollbar {
+  display: none;
 }
 
 .onboarding-profile-header {
@@ -247,5 +260,76 @@
   .onboarding-profile {
     padding-left: 14px;
     padding-right: 14px;
+  }
+}
+
+
+/* ---------- Onboarding two-page setup ---------- */
+
+.onboarding-profile-step {
+  scroll-behavior: smooth;
+}
+
+.onboarding-profile-header-step {
+  position: relative;
+  grid-template-columns: 64px minmax(0, 1fr);
+  padding-top: 42px;
+}
+
+.onboarding-profile-header-step > img {
+  width: 64px;
+  height: 64px;
+}
+
+.onboarding-back-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #e9e3df;
+  border-radius: 13px;
+
+  background: #fffdfb;
+  color: #4f4946;
+
+  box-shadow: 0 5px 14px rgba(45, 35, 30, 0.045);
+}
+
+.pet-form-section-single {
+  margin-bottom: 0;
+}
+
+.onboarding-step-actions {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.onboarding-step-actions-split {
+  grid-template-columns: .8fr 1.2fr;
+}
+
+@media (max-height: 720px) {
+  .onboarding-profile {
+    padding-top: calc(16px + env(safe-area-inset-top));
+  }
+
+  .onboarding-profile-header-step {
+    margin-bottom: 16px;
+    padding-top: 38px;
+  }
+
+  .pet-form-section {
+    padding: 16px;
+  }
+
+  .pet-field input,
+  .pet-field select {
+    height: 46px;
   }
 }
