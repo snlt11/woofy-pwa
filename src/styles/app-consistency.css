@@ -599,3 +599,120 @@
     font-size: 15px;
   }
 }
+
+/* ---------- WOOFY custom navbar v2 ---------- */
+
+.app-shell .woofy-tabbar {
+  left: 14px;
+  right: 14px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  height: 82px;
+  padding: 7px 9px;
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.62);
+
+  -webkit-backdrop-filter: blur(30px) saturate(170%);
+  backdrop-filter: blur(30px) saturate(170%);
+
+  border: 1px solid rgba(255, 255, 255, 0.88);
+
+  box-shadow:
+    0 14px 34px rgba(71, 88, 105, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.app-shell .woofy-tab {
+  height: 68px;
+  gap: 2px;
+}
+
+.app-shell .woofy-tab-icon {
+  width: 54px;
+  height: 46px;
+  flex: 0 0 46px;
+
+  border-radius: 17px;
+
+  color: #8390a3;
+
+  background: transparent;
+  border: 1px solid transparent;
+
+  transform: none;
+
+  transition:
+    color 180ms var(--ease-app),
+    background-color 180ms var(--ease-app),
+    border-color 180ms var(--ease-app),
+    box-shadow 180ms var(--ease-app);
+}
+
+.app-shell .woofy-tab-icon > svg {
+  width: 26px;
+  height: 26px;
+}
+
+.app-shell .woofy-tab.is-active .woofy-tab-icon {
+  color: #1689e6;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(234, 246, 255, 0.96),
+      rgba(221, 240, 255, 0.90)
+    );
+
+  border-color: rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 5px 14px rgba(54, 143, 214, 0.12);
+}
+
+.app-shell .woofy-tab-label {
+  height: 16px;
+
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+
+  color: #8390a3;
+}
+
+.app-shell .woofy-tab.is-active .woofy-tab-label {
+  color: #1689e6;
+  font-weight: 700;
+}
+
+.app-shell .woofy-tab:active .woofy-tab-icon {
+  transform: scale(0.96);
+}
+
+@media (max-width: 370px) {
+  .app-shell .woofy-tabbar {
+    height: 78px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .app-shell .woofy-tab {
+    height: 64px;
+  }
+
+  .app-shell .woofy-tab-icon {
+    width: 50px;
+    height: 42px;
+    flex-basis: 42px;
+    border-radius: 16px;
+  }
+
+  .app-shell .woofy-tab-icon > svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .app-shell .woofy-tab-label {
+    font-size: 11px;
+  }
+}
