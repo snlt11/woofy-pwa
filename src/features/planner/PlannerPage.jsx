@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { ChevronRight, Plus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+import AddPlannerActivitySheet from "../../components/AddPlannerActivitySheet";
 import {
   CompleteIcon,
   IncompleteIcon,
@@ -25,6 +27,7 @@ import {
 import { useWoofy } from "../../state/useWoofy";
 import "../../styles/woofy-icons.css";
 import "../../styles/planner-icons.css";
+import "../../styles/add-planner-activity.css";
 
 const activityIcons = {
   meal: MealIcon,
@@ -35,6 +38,7 @@ const activityIcons = {
 
 export default function PlannerPage() {
   const navigate = useNavigate();
+  const [addingActivity, setAddingActivity] = useState(false);
 
   const {
     state: { pet, planner },
@@ -158,10 +162,23 @@ export default function PlannerPage() {
         })}
       </section>
 
-      <button className="planner-add-button" type="button">
-        <Plus size={26} />
+      <button
+        className="planner-add-button"
+        type="button"
+        onClick={() => setAddingActivity(true)}
+      >
+        <Plus size={21} />
         <span>Add activity</span>
       </button>
+
+      {addingActivity && (
+        <AddPlannerActivitySheet
+          petName={pet.name}
+          selectedDate={selectedDate}
+          onClose={() => setAddingActivity(false)}
+          onSave={(activity) => actions.addPlannerActivity(activity)}
+        />
+      )}
     </main>
   );
 }

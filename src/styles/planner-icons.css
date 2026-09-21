@@ -134,3 +134,34 @@
     height: 16px;
   }
 }
+
+/* Planner add activity consistency */
+
+.planner-page .planner-add-button {
+  width: min(100%, 300px);
+  min-height: 52px;
+
+  margin: 8px auto 22px;
+
+  border-radius: 18px;
+
+  gap: 8px;
+
+  font-size: 15px;
+  font-weight: 750;
+
+  box-shadow: 0 8px 20px rgba(70, 143, 198, .15);
+}
+
+.planner-page .planner-add-button svg {
+  width: 21px;
+  height: 21px;
+}
+
+@media (max-width: 370px) {
+  .planner-page .planner-add-button {
+    min-height: 50px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+}

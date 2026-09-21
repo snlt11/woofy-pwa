@@ -9,6 +9,21 @@ import { woofyRepository } from "../data";
 
 export const WoofyContext = createContext(null);
 
+function plannerActivityMinutes(activity) {
+  if (Number.isFinite(activity.sortMinutes)) return activity.sortMinutes;
+
+  const rawHour = Number.parseInt(activity.time, 10);
+  if (!Number.isFinite(rawHour)) return Number.MAX_SAFE_INTEGER;
+
+  const minuteMatch = String(activity.time).match(/:(\d{2})/);
+  const minute = minuteMatch ? Number.parseInt(minuteMatch[1], 10) : 0;
+
+  let hour = rawHour % 12;
+  if (activity.period === "PM") hour += 12;
+
+  return hour * 60 + minute;
+}
+
 export function WoofyProvider({ children }) {
   const [state, setState] = useState(() => woofyRepository.loadSnapshot());
 
@@ -129,6 +144,30 @@ export function WoofyProvider({ children }) {
             ),
           },
         }));
+      },
+
+      addPlannerActivity(activity) {
+        commit((current) => {
+          const nextActivity = {
+            ...activity,
+            id:
+              activity.id ||
+              (typeof crypto !== "undefined" && crypto.randomUUID
+                ? crypto.randomUUID()
+                : `planner-${Date.now()}`),
+            completed: false,
+          };
+
+          return {
+            ...current,
+            planner: {
+              ...current.planner,
+              activities: [...current.planner.activities, nextActivity].sort(
+                (a, b) => plannerActivityMinutes(a) - plannerActivityMinutes(b)
+              ),
+            },
+          };
+        });
       },
 
       updatePet(patch) {

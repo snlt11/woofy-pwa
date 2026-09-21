@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 import { ROUTES } from "../config/routes";
@@ -16,6 +16,29 @@ export default function AppLayout() {
 
   useLayoutEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!("serviceWorker" in navigator) || !navigator.onLine) return;
+
+    let cancelled = false;
+
+    navigator.serviceWorker
+      .getRegistration()
+      .then((registration) => {
+        if (!cancelled && registration) {
+          return registration.update();
+        }
+
+        return undefined;
+      })
+      .catch(() => {
+        // Keep using the current cached version when an update check fails.
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [pathname]);
 
   if (!onboarding.profileCompleted) {

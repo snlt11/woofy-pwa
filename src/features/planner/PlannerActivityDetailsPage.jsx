@@ -99,7 +99,7 @@ export default function PlannerActivityDetailsPage() {
             {activity.completed ? "Completed" : "Planned"}
           </span>
           <h2>{activity.detail}</h2>
-          <p>{copy.description}</p>
+          <p>{activity.description || copy.description}</p>
         </div>
       </section>
 
@@ -135,7 +135,7 @@ export default function PlannerActivityDetailsPage() {
 
       <section className="planner-activity-details-note">
         <span>Routine note</span>
-        <p>{copy.note}</p>
+        <p>{activity.note || copy.note}</p>
       </section>
 
       <button
